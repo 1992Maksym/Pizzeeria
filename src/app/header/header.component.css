@@ -1,0 +1,8 @@
+.header-menu{
+  list-style: none;
+  display: flex;
+  padding: 20px 0;
+  box-shadow: 1px 2px 1px lightgray;
+  margin: 0;
+  position: sticky;
+}
