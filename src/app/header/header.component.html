@@ -1,6 +1,13 @@
-<ul class="header-menu">
-  <li routerLink="/"><button mat-button color="yellow" class="mat-button">Главная</button></li>
-  <li routerLink="/about-us"><button mat-button color="yellow" class="mat-button">О нас</button></li>
-  <li routerLink="/promotions"><button mat-button color="yellow" class="mat-button">Акции</button></li>
-</ul>
+<div class="header-wrap">
+  <ul class="header-menu">
+    <li routerLink="/"><button mat-button class="mat-button">Главная</button></li>
+    <li routerLink="/about-us"><button mat-button class="mat-button">О нас</button></li>
+    <li routerLink="/promotions"><button mat-button class="mat-button">Акции</button></li>
+  </ul>
 
+  <div class="header-login">
+    <button routerLink="/login" mat-button class="mat-button">Войти</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
