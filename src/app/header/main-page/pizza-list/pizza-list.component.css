@@ -1,0 +1,23 @@
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.pizza-list-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+.piza-list-item{
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    border: 1px solid transparent;
+}
+.pizza-list-item:hover{
+    box-shadow: none;
+    border: 1px solid rgba(43,74,69,.2);
+}

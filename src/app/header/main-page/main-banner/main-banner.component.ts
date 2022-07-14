@@ -13,8 +13,8 @@ export class MainBannerComponent implements OnInit {
   ngOnInit(): void {
   }
   config: SwiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 50,
+    slidesPerView: 1,
+    // spaceBetween: 50,
     navigation: true,
     pagination: { clickable: true },
     scrollbar: { draggable: true },

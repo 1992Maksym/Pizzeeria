@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './footer/footer.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FooterComponent} from './footer/footer.component';
 import {LoginComponent} from "./header/login/login.component";
 import {HeaderComponent} from "./header/header.component";
 import {AboutUsComponent} from "./header/about-us/about-us.component";
@@ -13,6 +13,7 @@ import {PromotionsComponent} from "./header/promotions/promotions.component";
 import {SwiperModule} from "swiper/angular";
 import {MatButtonModule} from "@angular/material/button";
 import {HeaderRoutingModule} from "./header/header-routing.module";
+import {PizzaListComponent} from './header/main-page/pizza-list/pizza-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HeaderRoutingModule} from "./header/header-routing.module";
     MainPageComponent,
     PromotionsComponent,
     MainBannerComponent,
-    LoginComponent
+    LoginComponent,
+    PizzaListComponent
   ],
   imports: [
     BrowserModule,
