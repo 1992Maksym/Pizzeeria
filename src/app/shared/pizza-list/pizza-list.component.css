@@ -21,7 +21,7 @@
 .pizza-body-block{
     padding: 20px;
 }
-.piza-list-item{
+.pizza-list-item{
     box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
     border-radius: 15px;
     overflow: hidden;
