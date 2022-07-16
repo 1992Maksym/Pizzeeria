@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import SwiperCore, { SwiperOptions } from 'swiper';
+import SwiperCore, { SwiperOptions, Pagination, Navigation, Scrollbar, Autoplay } from 'swiper';
+SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay ])
 
 @Component({
   selector: 'app-main-banner',
@@ -15,12 +16,15 @@ export class MainBannerComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 1,
     // spaceBetween: 50,
-    navigation: true,
-    pagination: { clickable: true },
+    // navigation: true,
+    // pagination: { clickable: true },
     scrollbar: { draggable: true },
+    autoplay: {
+      delay: 2500
+    }
   };
   onSwiper([swiper]: any) {
-    console.log(swiper);
+    console.log('swiper');
   }
   onSlideChange() {
     console.log('slide change');

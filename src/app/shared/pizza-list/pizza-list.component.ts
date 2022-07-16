@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PizzaServerService } from '../pizza-server.service';
+import { PizzaServerService } from '../../header/main-page/pizza-server.service';
 
 @Component({
   selector: 'app-pizza-list',
