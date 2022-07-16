@@ -24,10 +24,10 @@ export class MainBannerComponent implements OnInit {
     }
   };
   onSwiper([swiper]: any) {
-    console.log('swiper');
+    // console.log('swiper');
   }
   onSlideChange() {
-    console.log('slide change');
+    // console.log('slide change');
   }
 
 }

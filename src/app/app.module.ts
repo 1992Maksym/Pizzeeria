@@ -14,6 +14,7 @@ import {SwiperModule} from "swiper/angular";
 import {MatButtonModule} from "@angular/material/button";
 import {HeaderRoutingModule} from "./header/header-routing.module";
 import {PizzaListComponent} from './shared/pizza-list/pizza-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {PizzaListComponent} from './shared/pizza-list/pizza-list.component';
     BrowserAnimationsModule,
     SwiperModule,
     MatButtonModule,
-    HeaderRoutingModule
+    HeaderRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
