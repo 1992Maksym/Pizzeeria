@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login-block">
+    <div class="login-form-wrap">
+        <span class="close-login-form">x</span>
+        <h2 class="login-title">Вход</h2>
+        <span class="login-subtitle">Пожалуйста, введите почту и пароль!</span>
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">
+            <div class="email-login">
+                <input type="email" id="typeEmail" formControlName="email" [ngClass]="{'invalid': formControls['email'].errors}"  placeholder="Почта">
+                <label for="typeEmail">Почта</label>
+                <div class="form-errors" *ngIf="formControls['email'].errors">
+                    <div *ngIf="formControls['email'].errors['required'] && formControls['email'].touched" class="email-error">Почта пустая</div>
+                    <div *ngIf="formControls['email'].errors['email']">Введите правильно почту</div>
+                </div>
+            </div>
+            <div class="password-login">
+                <input type="password" id="typePassword" [ngClass]="{'invalid': formControls['password'].errors}" formControlName="password" placeholder="Пароль">
+                <label for="typePassword">Пароль</label>
+                <div class="form-errors" *ngIf="formControls['password'].errors">
+                    <div *ngIf="formControls['password'].errors['required'] && formControls['password'].touched" class="email-error">Пароль пустой</div>
+                    <div *ngIf="formControls['password'].errors['pattern']">Введите правильно пароль</div>
+                </div>
+            </div>
+            <button mat-stroked-button type="submit">Войти</button>
+        </form>
+    </div>
+</div>

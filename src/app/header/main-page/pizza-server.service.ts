@@ -120,7 +120,7 @@ export class PizzaServerService {
 // },
 // ];
 
-dbData = 'http://localhost:3001/pizza_arr'
+dbData = 'http://localhost:3001/pizza_arr';
 pizzaArr$:BehaviorSubject<[]> = new BehaviorSubject<[]>([]);
 getPizzaData(){
     this.http.get(this.dbData).pipe(

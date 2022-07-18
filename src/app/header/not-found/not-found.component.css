@@ -1,0 +1,13 @@
+.not-found{
+    margin: 20% auto 0;
+    text-align: center;
+    color: #484848;
+
+}
+.error-code{
+    font-size: 64px;
+    margin-bottom: 12px;
+}
+.error-text{
+    font-size: 20px;
+}
