@@ -108,5 +108,14 @@
             "id": "pizzaHawaii",
             "counter": 0
         }
+    ],
+    "administrator": [
+        {
+            "email": "admin@gmail.com",
+            "password": "Admin123"
+        }
+    ],
+    "users": [
+        
     ]
 }

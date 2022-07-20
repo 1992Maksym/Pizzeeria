@@ -20,7 +20,10 @@
                     <div *ngIf="formControls['password'].errors['pattern']">Введите правильно пароль</div>
                 </div>
             </div>
-            <button mat-stroked-button type="submit">Войти</button>
+            <button class="login-form-btn" [disabled]="this.loginForm.invalid" mat-stroked-button type="submit">Войти</button>
         </form>
+        <div class="no-account">
+            <a class="no-account-link" routerLink="/registration">Создать аккаунт</a>
+        </div>
     </div>
 </div>
