@@ -1,0 +1,45 @@
+.register-form-wrap{
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    border-radius: 15px;
+    // position: relative;
+
+    .login-title{
+        margin: 0 0 5px 0;
+    }
+    .register-form{
+        margin: 30px 0 0 0;
+
+        .naame-login{
+            margin-top: 20px;
+        }
+        .name-login input,
+        .password-login input,
+        .email-login input{
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            border: 1px solid #bdbdbd;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            border-radius: 3px;
+            padding: 10px 5px;
+            box-sizing: border-box;
+        }
+        .name-login label,
+        .password-login label,
+        .email-login label{
+            display: block;
+            font-size: 14px;
+        }
+        .form-errors{
+            font-size: 10px;
+            color: darkred
+        }
+        .login-form-btn{
+            margin-top: 40px;
+        }
+    }
+}

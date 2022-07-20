@@ -1,0 +1,36 @@
+<div class="register-block">
+    <div class="register-form-wrap">
+        <!-- <span class="close-login-form">x</span> -->
+        <h2 class="login-title">Регистрация</h2>
+        <!-- <span class="login-subtitle">Пожалуйста, введите почту и пароль!</span> -->
+        <form [formGroup]="registerForm" (ngSubmit)="submitRegister()" class="register-form">
+            <div class="name-login">
+                <input type="text" id="typeName" formControlName="name" [ngClass]="{'invalid': formControls['name'].errors}"  placeholder="Имя">
+                <label for="typeName">Имя</label>
+                <div class="form-errors" *ngIf="formControls['name'].errors">
+                    <div *ngIf="formControls['name'].errors['required'] && formControls['name'].touched" class="name-error">Введите имя</div>
+                </div>
+            </div>
+            <div class="email-login">
+                <input type="email" id="typeEmail" formControlName="email" [ngClass]="{'invalid': formControls['email'].errors}"  placeholder="Почта">
+                <label for="typeEmail">Почта</label>
+                <div class="form-errors" *ngIf="formControls['email'].errors">
+                    <div *ngIf="formControls['email'].errors['required'] && formControls['email'].touched" class="email-error">Почта пустая</div>
+                    <div *ngIf="formControls['email'].errors['email']">Введите правильно почту</div>
+                </div>
+            </div>
+            <div class="password-login">
+                <input type="password" id="typePassword" [ngClass]="{'invalid': formControls['password'].errors}" formControlName="password" placeholder="Пароль">
+                <label for="typePassword">Пароль</label>
+                <div class="form-errors" *ngIf="formControls['password'].errors">
+                    <div *ngIf="formControls['password'].errors['required'] && formControls['password'].touched" class="password-error">Пароль пустой</div>
+                    <div *ngIf="formControls['password'].errors['pattern']">Введите правильно пароль</div>
+                </div>
+            </div>
+            <button class="login-form-btn" [disabled]="this.registerForm.invalid" mat-stroked-button type="submit">Зарегистрироваться</button>
+        </form>
+        <!-- <div class="no-account">
+            <a class="no-account-link" routerLink="/registration">Создать аккаунт</a>
+        </div> -->
+    </div>
+</div>
