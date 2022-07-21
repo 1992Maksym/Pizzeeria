@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map,mergeMap } from 'rxjs';
+import { tap,map,mergeMap } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class RegistrationService {
   dbUsers = 'http://localhost:3001/users';
-  users = [];
+  usersPassword:any = [];
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,16 @@ export class RegistrationService {
   }
   registerUser(user: User){
     this.http.get(this.dbUsers).pipe(
-      map(el => console.log(Array.isArray(el)))
+      tap((el:any) => el.map((el:User) => {
+        this.usersPassword.push(el.password)
+      })),
+      tap(el => {
+        if(this.usersPassword.includes(user.password)){
+          alert('Такой пароль уже существует')
+        }else{
+          this.http.post(this.dbUsers,user).subscribe()
+        }
+      })
     ).subscribe()
     
     // this.http.post(this.dbUsers,user).subscribe()

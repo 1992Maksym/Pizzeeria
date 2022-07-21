@@ -7,6 +7,7 @@ import { LoginComponent } from "./login.component";
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from "./registration/registration.component";
+import { HeaderRoutingModule } from "../header-routing.module";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RegistrationComponent } from "./registration/registration.component";
         ReactiveFormsModule,
         MatButtonModule,
         BrowserAnimationsModule,
+        HeaderRoutingModule
     ]
 })
 export class LoginModule{}

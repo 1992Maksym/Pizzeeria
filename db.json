@@ -270,6 +270,7 @@
   ],
   "administrator": [
     {
+      "name": "admin",
       "email": "admin@gmail.com",
       "password": "Admin123"
     }
@@ -288,9 +289,9 @@
       "id": 2
     },
     {
-      "name": "Bob",
-      "email": "salov8@gmail.com",
-      "password": "Asdfg123",
+      "name": "Oleg",
+      "email": "Oleg123@meta.ua",
+      "password": "Oleg1234",
       "id": 3
     }
   ]

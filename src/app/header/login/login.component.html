@@ -23,7 +23,8 @@
             <button class="login-form-btn" [disabled]="this.loginForm.invalid" mat-stroked-button type="submit">Войти</button>
         </form>
         <div class="no-account">
-            <a class="no-account-link" routerLink="/registration">Создать аккаунт</a>
+            <a routerLink = "/registration" class="no-account-link" >Создать аккаунт</a>
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>

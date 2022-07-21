@@ -3,21 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './header/login/login.module';
-import {SwiperModule} from "swiper/angular";
-import {MatButtonModule} from "@angular/material/button";
-import {HeaderRoutingModule} from "./header/header-routing.module";
+import { SwiperModule } from "swiper/angular";
+import { MatButtonModule } from "@angular/material/button";
+import { HeaderRoutingModule } from "./header/header-routing.module";
 
 
-import {AppComponent} from './app.component';
-import {FooterComponent} from './footer/footer.component';
-import {HeaderComponent} from "./header/header.component";
-import {AboutUsComponent} from "./header/about-us/about-us.component";
-import {MainBannerComponent} from "./shared/main-banner/main-banner.component";
-import {MainPageComponent} from "./header/main-page/main-page.component";
-import {PromotionsComponent} from "./header/promotions/promotions.component";
-import {PizzaListComponent} from './shared/pizza-list/pizza-list.component';
-import {NotFoundComponent} from './header/not-found/not-found.component';
-import { RegistrationComponent } from './header/login/registration/registration.component';
+import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from "./header/header.component";
+import { AboutUsComponent } from "./header/about-us/about-us.component";
+import { MainBannerComponent } from "./shared/main-banner/main-banner.component";
+import { MainPageComponent } from "./header/main-page/main-page.component";
+import { PromotionsComponent } from "./header/promotions/promotions.component";
+import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
+import { NotFoundComponent } from './header/not-found/not-found.component';
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import { RegistrationComponent } from './header/login/registration/registration.
     MainBannerComponent,
     PizzaListComponent,
     NotFoundComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +38,7 @@ import { RegistrationComponent } from './header/login/registration/registration.
     MatButtonModule,
     HeaderRoutingModule,
     HttpClientModule,
-    LoginModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
