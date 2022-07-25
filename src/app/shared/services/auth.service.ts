@@ -18,14 +18,6 @@ export class AuthService {
   constructor(private http: HttpClient,private router: Router) { }
 
   logIn(loginForm: {email: string, password: string}){
-    // this.http.get(this.dbDataAdmin).pipe(
-    //   tap((el: any) => {
-    //     if(el[0].email == loginForm.email && el[0].password == loginForm.password){
-    //       this.admin.next(true);
-    //       this.router.navigate(['admin'])
-    //     }
-    //   }),
-    // ).subscribe()
     this.http.get(this.dbDataUsers).pipe(
       tap((arr: any) => {
         arr.map((el: User) => {
