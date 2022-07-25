@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { PizzaServerService } from '../../header/main-page/pizza-server.service';
+import { Pizza } from '../interfaces/pizza';
+
 
 @Component({
   selector: 'app-pizza-list',
@@ -15,6 +17,6 @@ export class PizzaListComponent implements OnInit {
     this.pizzaServer.getPizzaData()
   }
 
-  pizzaArr$:BehaviorSubject<[]> = this.pizzaServer.pizzaArr$;
+  pizzaArr$:BehaviorSubject<Pizza[]> = this.pizzaServer.pizzaArr$;
 
 }

@@ -8,7 +8,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class RegistrationService {
   dbUsers = 'http://localhost:3001/users';
-  usersPassword:any = [];
+  usersPassword:string[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -24,11 +24,10 @@ export class RegistrationService {
         if(this.usersPassword.includes(user.password)){
           alert('Такой пароль уже существует')
         }else{
+          user.type = 'user';
           this.http.post(this.dbUsers,user).subscribe()
         }
       })
     ).subscribe()
-    
-    // this.http.post(this.dbUsers,user).subscribe()
   }
 }

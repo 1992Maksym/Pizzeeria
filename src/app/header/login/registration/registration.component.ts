@@ -31,7 +31,6 @@ export class RegistrationComponent implements OnInit {
 
   submitRegister(){
     this.register.registerUser(this.registerForm.value)
-    // console.log(this.registerForm.value)
   }
 
 }

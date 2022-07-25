@@ -17,6 +17,7 @@ import { MainPageComponent } from "./header/main-page/main-page.component";
 import { PromotionsComponent } from "./header/promotions/promotions.component";
 import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './header/not-found/not-found.component';
+import { SpacePipe } from './shared/pipes/space.pipe';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NotFoundComponent } from './header/not-found/not-found.component';
     MainBannerComponent,
     PizzaListComponent,
     NotFoundComponent,
+    SpacePipe,
   ],
   imports: [
     BrowserModule,

@@ -20,8 +20,7 @@
         "грибы",
         "помидор"
       ],
-      "id": "pizzaNapoletana",
-      "counter": 0
+      "titleId": "pizzaNapoletana"
     },
     {
       "image": "img/4chees.jpg",
@@ -42,8 +41,7 @@
         "брынза",
         "с плесенью"
       ],
-      "id": "pizza4chees",
-      "counter": 0
+      "titleId": "pizza4chees"
     },
     {
       "image": "img/mexicano.jfif",
@@ -65,8 +63,7 @@
         "огурец",
         "помидор"
       ],
-      "id": "pizzaMexicano",
-      "counter": 0
+      "titleId": "pizzaMexicano"
     },
     {
       "image": "img/hawaii.jfif",
@@ -86,8 +83,7 @@
         "сыр",
         "ананасы"
       ],
-      "id": "pizzaHawaii",
-      "counter": 0
+      "titleId": "pizzaHawaii"
     },
     {
       "image": "img/napoletana.jfif",
@@ -109,8 +105,7 @@
         "грибы",
         "помидор"
       ],
-      "id": "pizzaNapoletana",
-      "counter": 0
+      "titleId": "pizzaNapoletana"
     },
     {
       "image": "img/4chees.jpg",
@@ -131,8 +126,7 @@
         "брынза",
         "с плесенью"
       ],
-      "id": "pizza4chees",
-      "counter": 0
+      "titleId": "pizza4chees"
     },
     {
       "image": "img/mexicano.jfif",
@@ -154,8 +148,7 @@
         "огурец",
         "помидор"
       ],
-      "id": "pizzaMexicano",
-      "counter": 0
+      "titleId": "pizzaMexicano"
     },
     {
       "image": "img/hawaii.jfif",
@@ -175,8 +168,7 @@
         "сыр",
         "ананасы"
       ],
-      "id": "pizzaHawaii",
-      "counter": 0
+      "titleId": "pizzaHawaii"
     },
     {
       "image": "img/napoletana.jfif",
@@ -198,8 +190,7 @@
         "грибы",
         "помидор"
       ],
-      "id": "pizzaNapoletana",
-      "counter": 0
+      "titleId": "pizzaNapoletana"
     },
     {
       "image": "img/4chees.jpg",
@@ -220,8 +211,7 @@
         "брынза",
         "с плесенью"
       ],
-      "id": "pizza4chees",
-      "counter": 0
+      "titleId": "pizza4chees"
     },
     {
       "image": "img/mexicano.jfif",
@@ -243,8 +233,7 @@
         "огурец",
         "помидор"
       ],
-      "id": "pizzaMexicano",
-      "counter": 0
+      "titleId": "pizzaMexicano"
     },
     {
       "image": "img/hawaii.jfif",
@@ -264,35 +253,108 @@
         "сыр",
         "ананасы"
       ],
-      "id": "pizzaHawaii",
-      "counter": 0
-    }
-  ],
-  "administrator": [
+      "titleId": "pizzaHawaii"
+    },
     {
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "password": "Admin123"
+      "image": "img/napoletana.jfif",
+      "title": "Napoletana",
+      "size": [
+        25,
+        30,
+        35
+      ],
+      "price": [
+        80,
+        100,
+        120
+      ],
+      "description": [
+        "ветчина",
+        "сыр",
+        "кукуруза",
+        "грибы",
+        "помидор"
+      ],
+      "titleId": "pizzaNapoletana"
+    },
+    {
+      "image": "img/4chees.jpg",
+      "title": "4chees",
+      "size": [
+        25,
+        30,
+        35
+      ],
+      "price": [
+        90,
+        105,
+        130
+      ],
+      "description": [
+        "чедер",
+        "гауда",
+        "брынза",
+        "с плесенью"
+      ],
+      "titleId": "pizza4chees"
+    },
+    {
+      "image": "img/mexicano.jfif",
+      "title": "Mexicano",
+      "size": [
+        25,
+        30,
+        35
+      ],
+      "price": [
+        70,
+        95,
+        110
+      ],
+      "description": [
+        "кабаноси",
+        "сыр",
+        "халапеньо",
+        "огурец",
+        "помидор"
+      ],
+      "titleId": "pizzaMexicano"
+    },
+    {
+      "image": "img/hawaii.jfif",
+      "title": "Hawaii",
+      "size": [
+        25,
+        30,
+        35
+      ],
+      "price": [
+        75,
+        90,
+        100
+      ],
+      "description": [
+        "курица",
+        "сыр",
+        "ананасы"
+      ],
+      "titleId": "pizzaHawaii"
     }
   ],
   "users": [
     {
-      "name": "Максим",
-      "email": "maksimsalov8@gmail.com",
-      "password": "Max12345",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "Admin12345",
+      "type": "admin",
       "id": 1
     },
     {
       "name": "Максим",
-      "email": "maksimsalov8@mail.com",
-      "password": "12345Nani",
+      "email": "maksimsalov8@gmail.com",
+      "password": "Max12345",
+      "type": "user",
       "id": 2
-    },
-    {
-      "name": "Oleg",
-      "email": "Oleg123@meta.ua",
-      "password": "Oleg1234",
-      "id": 3
     }
   ]
 }
