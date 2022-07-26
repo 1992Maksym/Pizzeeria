@@ -8,6 +8,8 @@ import {NotFoundComponent} from "./not-found/not-found.component";
 import {RegistrationComponent} from "./login/registration/registration.component";
 import {UserComponent} from "./login/user/user.component";
 import {AdminComponent} from "./login/admin/admin.component";
+import { AdminAuthGuard } from "../shared/guards/admin-auth.guard";
+import { UserAuthGuard } from "../shared/guards/user-auth.guard";
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -15,9 +17,10 @@ const routes: Routes = [
   { path: 'promotions', component: PromotionsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'user/:id', component: UserComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: 'admin', component: AdminComponent, canActivate: [AdminAuthGuard] },
+  { path: 'user/:id', component: UserComponent, canActivate: [UserAuthGuard] },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ]
 @NgModule({
   imports:[
