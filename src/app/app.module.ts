@@ -6,7 +6,7 @@ import { LoginModule } from './header/login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
 import { HeaderRoutingModule } from "./header/header-routing.module";
-
+import {ToastModule} from 'primeng/toast';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -40,7 +40,8 @@ import { SpacePipe } from './shared/pipes/space.pipe';
     MatButtonModule,
     HeaderRoutingModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

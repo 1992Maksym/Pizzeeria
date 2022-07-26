@@ -29,7 +29,7 @@ export class RegistrationService {
             return of('Такой пароль уже существует');
           })
               // alert('Такой пароль уже существует')
-              // return of(null);
+            return of(null);
         }else{
               user.type = 'user';
               this.router.navigate(['user', user.name]);
