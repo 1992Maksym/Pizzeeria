@@ -27,7 +27,9 @@
                     <div *ngIf="formControls['password'].errors['pattern']">Введите правильно пароль</div>
                 </div>
             </div>
-            <button class="login-form-btn" [disabled]="this.registerForm.invalid" mat-stroked-button type="submit">Зарегистрироваться</button>
+            <p-toast></p-toast>
+            <!-- <button class="login-form-btn" [disabled]="this.registerForm.invalid" mat-stroked-button type="submit">Зарегистрироваться</button> -->
+            <button class="login-form-btn" [disabled]="this.registerForm.invalid" pButton pRipple type="submit">Зарегистрироваться</button>
         </form>
         <!-- <div class="no-account">
             <a class="no-account-link" routerLink="/registration">Создать аккаунт</a>
