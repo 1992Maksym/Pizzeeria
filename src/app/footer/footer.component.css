@@ -3,6 +3,21 @@
   /*position: relative;*/
   bottom: 0;
   /* width: 100%; */
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
+  /* margin: 50px 0 0 0; */
+}
+.footer-info{
+  font-size: 16px;
+  line-height: 18px;
+  color: #898989;
+}
+.insta,
+.facebook{
+  font-size: 16px;
+  line-height: 18px;
+  margin-right: 30px;
+  color: #898989;
+  text-decoration: none;
 }

@@ -10,10 +10,7 @@ import { AuthGuardService } from './auth-guard.service';
   providedIn: 'root'
 })
 export class AuthService { 
-
-  // admin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  // user: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  // dbDataAdmin = 'http://localhost:3001/administrator';
+  userLogged$: BehaviorSubject<User> = new BehaviorSubject<User>({name: '',email: '',password: '',type: ''});
   dbDataUsers = 'http://localhost:3001/users'; 
 
   constructor(private http: HttpClient,private router: Router, private authGuard: AuthGuardService) { }
@@ -23,18 +20,19 @@ export class AuthService {
       tap((arr: any) => {
         arr.map((el: User) => {
           if(el.email == loginForm.email && el.password == loginForm.password){
-            // this.user.next(true);
-            // if(el.type == 'admin') this.router.navigate(['admin'])
-            // else this.router.navigate(['user', el.name])
+            this.userLogged$.next(el);
+            
             if(el.type === 'admin') {
-            this.authGuard.adminIsLog();
+            // this.authGuard.adminIsLog();
+            
+            this.authGuard.userIsLog();
             this.router.navigate(['admin'])
-          }
+            }
             else {
               this.authGuard.userIsLog();
               this.router.navigate(['user', el.name])
+            }
           }
-        }
         })
       }),
     ).subscribe()

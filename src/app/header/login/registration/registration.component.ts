@@ -25,12 +25,8 @@ export class RegistrationComponent implements OnInit {
     return this.registerForm.controls
   }
 
-  // getName(value){
-  //   this.
-  // }
-
   submitRegister(){
-    this.register.registerUser(this.registerForm.value)
+    this.register.registerUser(this.registerForm.value);
   }
 
 }

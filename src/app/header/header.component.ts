@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../shared/services/auth.service';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../shared/interfaces/user.interface';
+import { AuthGuardService } from '../shared/services/auth-guard.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,11 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  // login:
-  constructor(private auth: AuthService) { }
+  userLogged$: BehaviorSubject<boolean> = this.authGuard.user;
 
-  ngOnInit(): void {}
+  constructor(private authGuard: AuthGuardService) { }
+
+  ngOnInit(): void {
+  }
 
 }

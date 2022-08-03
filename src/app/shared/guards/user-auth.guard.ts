@@ -16,7 +16,7 @@ export class UserAuthGuard implements CanActivate {
       console.log('user is login');
       return true
     }else{
-      return this.router.navigate(['**'], {queryParams: {auth: false}})
+      return this.router.navigate(['not-found'], {queryParams: {auth: false}})
     }
   }
   

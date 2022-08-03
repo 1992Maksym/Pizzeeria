@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import SwiperCore, { SwiperOptions, Pagination, Navigation, Scrollbar, Autoplay } from 'swiper';
+import { Slide } from '../interfaces/slide';
+import { BannerSlidesService } from '../services/banner-slides.service';
 SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay ])
 
 @Component({
@@ -8,10 +12,12 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay ])
   styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent implements OnInit {
+  slides$: BehaviorSubject<Slide[]> = this.bannerSlidesService.bannerSlides$;
 
-  constructor() { }
+  constructor(private bannerSlidesService: BannerSlidesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.bannerSlidesService.getBannerItems();
   }
   config: SwiperOptions = {
     slidesPerView: 1,
@@ -31,3 +37,7 @@ export class MainBannerComponent implements OnInit {
   }
 
 }
+function scrollIntoView() {
+  throw new Error('Function not implemented.');
+}
+

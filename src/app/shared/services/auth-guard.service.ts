@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardService {
-  admin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  // admin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   user: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  // user: BehaviorSubject<User> = new BehaviorSubject<User>({name: '', email: '', type: '', password: ''});
 
   constructor() { }
 
-  adminIsLog(){
-    this.admin.next(true);
-  }
-  adminIsLogout(){
-    this.admin.next(false);
-  }
   userIsLog(){
     this.user.next(true);
   }

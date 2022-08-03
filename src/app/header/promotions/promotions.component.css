@@ -1,0 +1,32 @@
+.promotions-wrap{
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.promotions-container{
+    max-width: 64%;
+}
+.promotions-title{
+    font-size: 60px;
+    color: #42413D;
+    margin-bottom: 50px;
+}
+.promotion-img-wrap{
+    margin-bottom: 30px;
+}
+.promotion-img{
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+.promotion-title{
+    font-size: 30px;
+    color: #42413D;
+    margin-bottom: 18px;
+}
+.promotion-description{
+    font-size: 20px;
+    line-height: 24px;
+    color: #42413D;
+    margin-bottom: 50px;
+}

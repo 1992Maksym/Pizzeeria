@@ -6,7 +6,10 @@ import { LoginModule } from './header/login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
 import { HeaderRoutingModule } from "./header/header-routing.module";
-import {ToastModule} from 'primeng/toast';
+import {MatBadgeModule} from '@angular/material/badge';
+
+// import {MatIconRegistry} from '@angular/material/icon';
+// import {DomSanitizer} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -18,6 +21,7 @@ import { PromotionsComponent } from "./header/promotions/promotions.component";
 import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './header/not-found/not-found.component';
 import { SpacePipe } from './shared/pipes/space.pipe';
+import { HeaderLoggedComponent } from './header/header-logged/header-logged.component';
 
 
 @NgModule({
@@ -32,6 +36,7 @@ import { SpacePipe } from './shared/pipes/space.pipe';
     PizzaListComponent,
     NotFoundComponent,
     SpacePipe,
+    HeaderLoggedComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,13 @@ import { SpacePipe } from './shared/pipes/space.pipe';
     HeaderRoutingModule,
     HttpClientModule,
     LoginModule,
-    ToastModule
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
+  //   matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityResourceUrl('/assets/mdi.svg'));
+  // }
+}

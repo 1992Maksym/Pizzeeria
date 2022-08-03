@@ -355,6 +355,71 @@
       "password": "Max12345",
       "type": "user",
       "id": 2
+    },
+    {
+      "name": "Bob",
+      "email": "maksimsalov8@gmail.com",
+      "password": "Bob12345",
+      "type": "user",
+      "id": 3
+    }
+  ],
+  "banner_items": [
+    {
+      "image": "../../../assets/img/pizza1.jfif",
+      "title": "посетите нас в свой День Рождения и поучавствуйте в акции в честь дня именинника",
+      "id": 1,
+      "link": "/promotions"
+    },
+    {
+      "image": "../../../assets/img/pizza2.jfif",
+      "title": "закажи две пиццы во вторник и получи скидку 70%",
+      "id": 2,
+      "link": "/promotions"
+    },
+    {
+      "image": "../../../assets/img/pizza3.jfif",
+      "title": "скидки для всех студентов",
+      "id": 3,
+      "link": "/promotions"
+    },
+    {
+      "image": "../../../assets/img/pizza4.jfif",
+      "title": "Пицца пятницы",
+      "id": 4,
+      "link": "https://sevenpizza.ua/product/100"
+    },
+    {
+      "image": "../../../assets/img/pizza2.jfif",
+      "title": "Пицца субботы",
+      "id": 5,
+      "link": "https://sevenpizza.ua/product/100"
+    },
+    {
+      "image": "../../../assets/img/pizza5.jfif",
+      "title": "Пицца воскресенья",
+      "id": 6,
+      "link": "https://sevenpizza.ua/product/100"
+    }
+  ],
+  "promotions": [
+    {
+      "title": "Скидка именинника",
+      "description": "День рождения дарим скидку 15%! Действует при предъявлении паспорта курьеру или кассиру. Скидка действует раз в году. Скидка не распространяется на меню бара, мороженое и ланчи, комбо (сеты) не скучает с другими акциями.",
+      "img": "../../../assets/img/promotions/happy-birthday.jfif",
+      "id": 1
+    },
+    {
+      "title": "Скидка для студентов",
+      "description": "Скидка не распространяется на меню бара, мороженое и ланчи, комбо (сеты) не скучает с другими акциями. Скидка действует с 10:00 до 16:00.",
+      "img": "../../../assets/img/promotions/student-pizza.png",
+      "id": 2
+    },
+    {
+      "title": "Сумасшедший вторник",
+      "description": "Скидка не распространяется на меню бара, мороженое и ланчи, комбо (сеты) не скучает с другими акциями.Заказывай две пиццы и получи скидку 70% на каждую вторую пиццу! Скидка действует с 12:00 до 18:00.",
+      "img": "../../../assets/img/promotions/tuesday-pizza.jfif",
+      "id": 3
     }
   ]
 }
