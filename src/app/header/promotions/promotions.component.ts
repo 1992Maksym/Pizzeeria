@@ -1,21 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Promotion } from 'src/app/shared/interfaces/promotion';
 import { PromotionsService } from 'src/app/shared/services/promotions.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-promotions',
   templateUrl: './promotions.component.html',
   styleUrls: ['./promotions.component.css']
 })
-export class PromotionsComponent implements OnInit {
+export class PromotionsComponent implements OnInit, AfterViewInit {
   promotions$: BehaviorSubject<Promotion[]> = this.promotions.promotions$;
-
-  constructor(private promotions: PromotionsService, private router: Router) { }
+  fragment: any;
+  constructor(
+    private promotions: PromotionsService,
+    private viewportScroller: ViewportScroller, 
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.promotions.getPromotions();
+  }
+
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(el => this.fragment = el)
+    this.viewportScroller.scrollToAnchor(this.fragment);
   }
 
 }
