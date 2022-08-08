@@ -22,6 +22,7 @@ import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './header/not-found/not-found.component';
 import { SpacePipe } from './shared/pipes/space.pipe';
 import { HeaderLoggedComponent } from './header/header-logged/header-logged.component';
+import { PizzaViewComponent } from './shared/pizza-view/pizza-view.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { HeaderLoggedComponent } from './header/header-logged/header-logged.comp
     NotFoundComponent,
     SpacePipe,
     HeaderLoggedComponent,
+    PizzaViewComponent,
   ],
   imports: [
     BrowserModule,

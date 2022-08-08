@@ -20,7 +20,8 @@
         "грибы",
         "помидор"
       ],
-      "titleId": "pizzaNapoletana"
+      "titleId": "pizzaNapoletana",
+      "id": "1"
     },
     {
       "image": "img/4chees.jpg",
@@ -41,7 +42,8 @@
         "брынза",
         "с плесенью"
       ],
-      "titleId": "pizza4chees"
+      "titleId": "pizza4chees",
+      "id": "2"
     },
     {
       "image": "img/mexicano.jfif",
@@ -63,7 +65,8 @@
         "огурец",
         "помидор"
       ],
-      "titleId": "pizzaMexicano"
+      "titleId": "pizzaMexicano",
+      "id": "3"
     },
     {
       "image": "img/hawaii.jfif",
@@ -83,7 +86,8 @@
         "сыр",
         "ананасы"
       ],
-      "titleId": "pizzaHawaii"
+      "titleId": "pizzaHawaii",
+      "id": "4"
     },
     {
       "image": "img/napoletana.jfif",
@@ -105,7 +109,8 @@
         "грибы",
         "помидор"
       ],
-      "titleId": "pizzaNapoletana"
+      "titleId": "pizzaNapoletana",
+      "id": "5"
     },
     {
       "image": "img/4chees.jpg",
@@ -126,7 +131,8 @@
         "брынза",
         "с плесенью"
       ],
-      "titleId": "pizza4chees"
+      "titleId": "pizza4chees",
+      "id": "6"
     },
     {
       "image": "img/mexicano.jfif",
@@ -148,7 +154,8 @@
         "огурец",
         "помидор"
       ],
-      "titleId": "pizzaMexicano"
+      "titleId": "pizzaMexicano",
+      "id": "7"
     },
     {
       "image": "img/hawaii.jfif",
@@ -168,7 +175,8 @@
         "сыр",
         "ананасы"
       ],
-      "titleId": "pizzaHawaii"
+      "titleId": "pizzaHawaii",
+      "id": "8"
     },
     {
       "image": "img/napoletana.jfif",
@@ -190,7 +198,8 @@
         "грибы",
         "помидор"
       ],
-      "titleId": "pizzaNapoletana"
+      "titleId": "pizzaNapoletana",
+      "id": "9"
     },
     {
       "image": "img/4chees.jpg",
@@ -211,7 +220,8 @@
         "брынза",
         "с плесенью"
       ],
-      "titleId": "pizza4chees"
+      "titleId": "pizza4chees",
+      "id": "10"
     },
     {
       "image": "img/mexicano.jfif",
@@ -233,7 +243,8 @@
         "огурец",
         "помидор"
       ],
-      "titleId": "pizzaMexicano"
+      "titleId": "pizzaMexicano",
+      "id": "11"
     },
     {
       "image": "img/hawaii.jfif",
@@ -253,7 +264,8 @@
         "сыр",
         "ананасы"
       ],
-      "titleId": "pizzaHawaii"
+      "titleId": "pizzaHawaii",
+      "id": "12"
     },
     {
       "image": "img/napoletana.jfif",
@@ -275,7 +287,8 @@
         "грибы",
         "помидор"
       ],
-      "titleId": "pizzaNapoletana"
+      "titleId": "pizzaNapoletana",
+      "id": "13"
     },
     {
       "image": "img/4chees.jpg",
@@ -296,7 +309,8 @@
         "брынза",
         "с плесенью"
       ],
-      "titleId": "pizza4chees"
+      "titleId": "pizza4chees",
+      "id": "14"
     },
     {
       "image": "img/mexicano.jfif",
@@ -318,7 +332,8 @@
         "огурец",
         "помидор"
       ],
-      "titleId": "pizzaMexicano"
+      "titleId": "pizzaMexicano",
+      "id": "15"
     },
     {
       "image": "img/hawaii.jfif",
@@ -338,7 +353,8 @@
         "сыр",
         "ананасы"
       ],
-      "titleId": "pizzaHawaii"
+      "titleId": "pizzaHawaii",
+      "id": "16"
     }
   ],
   "users": [
@@ -362,6 +378,13 @@
       "password": "Bob12345",
       "type": "user",
       "id": 3
+    },
+    {
+      "name": "harry",
+      "email": "potter@meta.ua",
+      "password": "Potter123",
+      "type": "user",
+      "id": 4
     }
   ],
   "banner_items": [

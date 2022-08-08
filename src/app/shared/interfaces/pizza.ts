@@ -5,4 +5,5 @@ export interface Pizza {
     price: string[];
     description: string[],
     titleId: string;
+    id: string;
 }

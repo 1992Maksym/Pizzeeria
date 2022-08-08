@@ -9,6 +9,8 @@ import {RegistrationComponent} from "./login/registration/registration.component
 import {UserComponent} from "./login/user/user.component";
 import {AdminComponent} from "./login/admin/admin.component";
 import { UserAuthGuard } from "../shared/guards/user-auth.guard";
+import { PizzaViewComponent } from "../shared/pizza-view/pizza-view.component";
+import { PizzaViewResolver } from "../shared/services/pizza-view.resolver";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'admin', component: AdminComponent, canActivate: [UserAuthGuard] },
   { path: 'user/:id', component: UserComponent, canActivate: [UserAuthGuard] },
+  { path: 'pizza/:id', component: PizzaViewComponent, resolve:{pizza: PizzaViewResolver} },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ]
