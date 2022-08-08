@@ -11,6 +11,7 @@ import {AdminComponent} from "./login/admin/admin.component";
 import { UserAuthGuard } from "../shared/guards/user-auth.guard";
 import { PizzaViewComponent } from "../shared/pizza-view/pizza-view.component";
 import { PizzaViewResolver } from "../shared/services/pizza-view.resolver";
+import { PizzaListResolver } from "../shared/services/pizza-list.resolver";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -19,7 +20,7 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
+  { path: '', component: MainPageComponent, resolve:{pizzaList: PizzaListResolver} },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'promotions', component: PromotionsComponent },
   { path: 'login', component: LoginComponent },

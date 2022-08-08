@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { Pizza } from '../interfaces/pizza';
-import { PizzaViewService } from '../services/pizza-view.service';
 
 @Component({
   selector: 'app-pizza-view',
@@ -18,6 +16,4 @@ export class PizzaViewComponent implements OnInit{
     this.pizza = this.route.snapshot.data['pizza'][0];
     // console.log(this.route.snapshot.data['pizza'][0])
   }
- 
-  
 }

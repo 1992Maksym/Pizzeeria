@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { PizzaServerService } from '../../header/main-page/pizza-server.service';
+import { PizzaServerService } from '../services/pizza-server.service';
 import { Pizza } from '../interfaces/pizza';
-import { PizzaViewService } from '../services/pizza-view.service';
+// import { PizzaViewService } from '../services/pizza-view.service';
 
 
 @Component({
@@ -13,16 +13,19 @@ import { PizzaViewService } from '../services/pizza-view.service';
 })
 export class PizzaListComponent implements OnInit {
 
+  pizzaArr: Pizza[] = []
   constructor(
-    private pizzaServer: PizzaServerService, 
+    // private pizzaServer: PizzaServerService, 
     private router: Router,
+    private route: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
-    this.pizzaServer.getPizzaData()
+    this.pizzaArr = this.route.snapshot.data['pizzaList'][0];
+    // this.pizzaServer.getPizzaData()
   }
 
-  pizzaArr$:BehaviorSubject<Pizza[]> = this.pizzaServer.pizzaArr$;
+  // pizzaArr$:BehaviorSubject<Pizza[]> = this.pizzaServer.pizzaArr$;
   
 
   showPizza(pizza: Pizza){
