@@ -1,10 +1,10 @@
 import {NgModule} from "@angular/core";
 import {ExtraOptions, RouterModule, Routes} from "@angular/router";
-import {MainPageComponent} from "./header/main-page/main-page.component";
-import {AboutUsComponent} from "./header/about-us/about-us.component";
-import {PromotionsComponent} from "./header/promotions/promotions.component";
+import {MainPageComponent} from "./core/components/main-page/main-page.component";
+import {AboutUsComponent} from "./core/components/about-us/about-us.component";
+import {PromotionsComponent} from "./core/components/promotions/promotions.component";
 import {LoginComponent} from "./header/login/login.component";
-import {NotFoundComponent} from "./header/not-found/not-found.component";
+import {NotFoundComponent} from "./shared/components/not-found/not-found.component";
 import {RegistrationComponent} from "./header/login/registration/registration.component";
 import {UserComponent} from "./header/login/user/user.component";
 import {AdminComponent} from "./header/login/admin/admin.component";
