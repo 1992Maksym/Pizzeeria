@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginModule } from './header/login/login.module';
+import { LoginModule } from './login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
 import { AppRoutingModule } from "./app-routing.module";
@@ -13,7 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from "./shared/components/header/header.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { MainBannerComponent } from "./shared/components/main-banner/main-banner.component";
 import { MainPageComponent } from "./main-page/main-page.component";

@@ -5,12 +5,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from "primeng/ripple";
-import { AppRoutingModule } from "../../app-routing.module";
+import { AppRoutingModule } from "../app-routing.module";
 
 import { LoginComponent } from "./login.component";
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
-import { RegistrationComponent } from "../../registration/registration.component";
+import { RegistrationComponent } from "../registration/registration.component";
 import { MessageService } from 'primeng/api';
 
 
