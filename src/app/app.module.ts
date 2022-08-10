@@ -12,7 +12,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 // import {DomSanitizer} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from "./header/header.component";
 import { AboutUsComponent } from "./core/components/about-us/about-us.component";
 import { MainBannerComponent } from "./shared/main-banner/main-banner.component";
