@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './header/login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
-import { HeaderRoutingModule } from "./header/header-routing.module";
-import {MatBadgeModule} from '@angular/material/badge';
+import { RoutingModule } from "./header/routing.module";
+import { MatBadgeModule } from '@angular/material/badge';
 
 // import {MatIconRegistry} from '@angular/material/icon';
 // import {DomSanitizer} from '@angular/platform-browser';
@@ -45,7 +45,7 @@ import { PizzaViewComponent } from './shared/pizza-view/pizza-view.component';
     BrowserAnimationsModule,
     SwiperModule,
     MatButtonModule,
-    HeaderRoutingModule,
+    RoutingModule,
     HttpClientModule,
     LoginModule,
     MatBadgeModule

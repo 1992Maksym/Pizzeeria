@@ -37,4 +37,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class HeaderRoutingModule{}
+export class RoutingModule {}

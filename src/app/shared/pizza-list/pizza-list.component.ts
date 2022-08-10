@@ -15,18 +15,18 @@ export class PizzaListComponent implements OnInit {
 
   pizzaArr: Pizza[] = []
   constructor(
-    // private pizzaServer: PizzaServerService, 
+    // private pizzaServer: PizzaServerService,
     private router: Router,
     private route: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
-    this.pizzaArr = this.route.snapshot.data['pizzaList'][0];
+    this.pizzaArr = this.route.snapshot.data['pizzaList'];
     // this.pizzaServer.getPizzaData()
   }
 
   // pizzaArr$:BehaviorSubject<Pizza[]> = this.pizzaServer.pizzaArr$;
-  
+
 
   showPizza(pizza: Pizza){
     this.router.navigate(['pizza', pizza.id]);

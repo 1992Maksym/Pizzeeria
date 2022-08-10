@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from "primeng/ripple";
-import { HeaderRoutingModule } from "../header-routing.module";
+import { RoutingModule } from "../routing.module";
 
 import { LoginComponent } from "./login.component";
 import { AdminComponent } from './admin/admin.component';
@@ -25,12 +25,12 @@ import { MessageService } from 'primeng/api';
         ReactiveFormsModule,
         MatButtonModule,
         BrowserAnimationsModule,
-        HeaderRoutingModule,
+        RoutingModule,
         ToastModule,
         RippleModule,
         ButtonModule
     ],
-    providers: [ 
+    providers: [
         MessageService,
     ],
 })
