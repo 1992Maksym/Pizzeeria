@@ -11,8 +11,6 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 
 import { SpacePipe } from './shared/pipes/space.pipe';
-// import {MatIconRegistry} from '@angular/material/icon';
-// import {DomSanitizer} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -35,11 +33,11 @@ import { PizzaViewComponent } from './shared/components/pizza-view/pizza-view.co
     MainPageComponent,
     PromotionsComponent,
     MainBannerComponent,
-    PizzaListComponent,
-    NotFoundComponent,
-    SpacePipe,
+    // PizzaListComponent,
+    // NotFoundComponent,
+    // SpacePipe,
     HeaderLoggedComponent,
-    PizzaViewComponent,
+    // PizzaViewComponent,
   ],
   imports: [
     BrowserModule,
