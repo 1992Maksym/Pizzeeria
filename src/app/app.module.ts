@@ -7,7 +7,10 @@ import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
 import { AppRoutingModule } from "./app-routing.module";
 import { MatBadgeModule } from '@angular/material/badge';
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
 
+import { SpacePipe } from './shared/pipes/space.pipe';
 // import {MatIconRegistry} from '@angular/material/icon';
 // import {DomSanitizer} from '@angular/platform-browser';
 
@@ -20,10 +23,8 @@ import { MainPageComponent } from "./main-page/main-page.component";
 import { PromotionsComponent } from "./promotions/promotions.component";
 import { PizzaListComponent } from './shared/components/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { SpacePipe } from './shared/pipes/space.pipe';
 import { HeaderLoggedComponent } from './header-logged/header-logged.component';
 import { PizzaViewComponent } from './shared/components/pizza-view/pizza-view.component';
-
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { PizzaViewComponent } from './shared/components/pizza-view/pizza-view.co
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
