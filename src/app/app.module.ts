@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './header/login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
-import { RoutingModule } from "./header/routing.module";
+import { RoutingModule } from "./routing.module";
 import { MatBadgeModule } from '@angular/material/badge';
 
 // import {MatIconRegistry} from '@angular/material/icon';

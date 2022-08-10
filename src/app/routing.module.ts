@@ -1,17 +1,17 @@
 import {NgModule} from "@angular/core";
 import {ExtraOptions, RouterModule, Routes} from "@angular/router";
-import {MainPageComponent} from "./main-page/main-page.component";
-import {AboutUsComponent} from "./about-us/about-us.component";
-import {PromotionsComponent} from "./promotions/promotions.component";
-import {LoginComponent} from "./login/login.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
-import {RegistrationComponent} from "./login/registration/registration.component";
-import {UserComponent} from "./login/user/user.component";
-import {AdminComponent} from "./login/admin/admin.component";
-import { UserAuthGuard } from "../shared/guards/user-auth.guard";
-import { PizzaViewComponent } from "../shared/pizza-view/pizza-view.component";
-import { PizzaViewResolver } from "../shared/services/pizza-view.resolver";
-import { PizzaListResolver } from "../shared/services/pizza-list.resolver";
+import {MainPageComponent} from "./header/main-page/main-page.component";
+import {AboutUsComponent} from "./header/about-us/about-us.component";
+import {PromotionsComponent} from "./header/promotions/promotions.component";
+import {LoginComponent} from "./header/login/login.component";
+import {NotFoundComponent} from "./header/not-found/not-found.component";
+import {RegistrationComponent} from "./header/login/registration/registration.component";
+import {UserComponent} from "./header/login/user/user.component";
+import {AdminComponent} from "./header/login/admin/admin.component";
+import { UserAuthGuard } from "./shared/guards/user-auth.guard";
+import { PizzaViewComponent } from "./shared/pizza-view/pizza-view.component";
+import { PizzaViewResolver } from "./shared/services/pizza-view.resolver";
+import { PizzaListResolver } from "./shared/services/pizza-list.resolver";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
