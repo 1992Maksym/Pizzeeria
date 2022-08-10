@@ -381,8 +381,8 @@
     },
     {
       "name": "harry",
-      "email": "potter@meta.ua",
-      "password": "Potter123",
+      "email": "harry@meta.ua",
+      "password": "harry123",
       "type": "user",
       "id": 4
     }

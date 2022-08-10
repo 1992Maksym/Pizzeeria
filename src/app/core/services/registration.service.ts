@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap, switchMap, of, catchError } from 'rxjs';
-import { User } from '../interfaces/user.interface';
+import { User } from '../../shared/interfaces/user.interface';
 import { MessageService } from 'primeng/api';
 import { AuthGuardService } from './auth-guard.service';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class RegistrationService {
   error:string = '';
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     private messageService: MessageService,
     private authGuard: AuthGuardService,
     private router: Router,

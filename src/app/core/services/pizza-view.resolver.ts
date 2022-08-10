@@ -5,7 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Pizza } from '../interfaces/pizza';
+import { Pizza } from '../../shared/interfaces/pizza';
 import { PizzaViewService } from './pizza-view.service';
 
 @Injectable({

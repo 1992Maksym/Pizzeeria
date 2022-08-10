@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Promotion } from 'src/app/shared/interfaces/promotion';
-import { PromotionsService } from 'src/app/shared/services/promotions.service';
+import { PromotionsService } from 'src/app/core/services/promotions.service';
 import { ViewportScroller } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   fragment: any;
   constructor(
     private promotions: PromotionsService,
-    private viewportScroller: ViewportScroller, 
+    private viewportScroller: ViewportScroller,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {

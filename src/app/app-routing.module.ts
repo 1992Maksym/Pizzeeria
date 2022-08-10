@@ -1,17 +1,17 @@
 import {NgModule} from "@angular/core";
 import {ExtraOptions, RouterModule, Routes} from "@angular/router";
-import {MainPageComponent} from "./core/components/main-page/main-page.component";
-import {AboutUsComponent} from "./core/components/about-us/about-us.component";
-import {PromotionsComponent} from "./core/components/promotions/promotions.component";
+import {MainPageComponent} from "./main-page/main-page.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
+import {PromotionsComponent} from "./promotions/promotions.component";
 import {LoginComponent} from "./header/login/login.component";
 import {NotFoundComponent} from "./shared/components/not-found/not-found.component";
-import {RegistrationComponent} from "./header/login/registration/registration.component";
+import {RegistrationComponent} from "./registration/registration.component";
 import {UserComponent} from "./header/login/user/user.component";
 import {AdminComponent} from "./header/login/admin/admin.component";
 import { UserAuthGuard } from "./shared/guards/user-auth.guard";
 import { PizzaViewComponent } from "./shared/pizza-view/pizza-view.component";
-import { PizzaViewResolver } from "./shared/services/pizza-view.resolver";
-import { PizzaListResolver } from "./shared/services/pizza-list.resolver";
+import { PizzaViewResolver } from "./core/services/pizza-view.resolver";
+import { PizzaListResolver } from "./core/services/pizza-list.resolver";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -37,4 +37,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class RoutingModule {}
+export class AppRoutingModule {}

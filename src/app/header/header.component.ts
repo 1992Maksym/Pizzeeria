@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../shared/interfaces/user.interface';
-import { AuthGuardService } from '../shared/services/auth-guard.service';
+import { AuthGuardService } from '../core/services/auth-guard.service';
 
 @Component({
   selector: 'app-header',

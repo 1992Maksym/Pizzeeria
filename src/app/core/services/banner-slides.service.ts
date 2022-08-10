@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Slide } from '../interfaces/slide';
+import { Slide } from '../../shared/interfaces/slide';
 
 @Injectable({
   providedIn: 'root'

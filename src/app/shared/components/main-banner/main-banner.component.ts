@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import SwiperCore, { SwiperOptions, Pagination, Navigation, Scrollbar, Autoplay } from 'swiper';
-import { Slide } from '../interfaces/slide';
-import { BannerSlidesService } from '../services/banner-slides.service';
+import { Slide } from '../../interfaces/slide';
+import { BannerSlidesService } from '../../../core/services/banner-slides.service';
 SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay ])
 
 @Component({

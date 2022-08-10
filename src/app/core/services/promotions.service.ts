@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Promotion } from '../interfaces/promotion';
+import { Promotion } from '../../shared/interfaces/promotion';
 import { tap } from 'rxjs/operators';
 
 @Injectable({

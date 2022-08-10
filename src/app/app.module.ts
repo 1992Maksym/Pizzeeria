@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './header/login/login.module';
 import { SwiperModule } from "swiper/angular";
 import { MatButtonModule } from "@angular/material/button";
-import { RoutingModule } from "./routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 import { MatBadgeModule } from '@angular/material/badge';
 
 // import {MatIconRegistry} from '@angular/material/icon';
@@ -14,14 +14,14 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from "./header/header.component";
-import { AboutUsComponent } from "./core/components/about-us/about-us.component";
-import { MainBannerComponent } from "./shared/main-banner/main-banner.component";
-import { MainPageComponent } from "./core/components/main-page/main-page.component";
-import { PromotionsComponent } from "./core/components/promotions/promotions.component";
+import { AboutUsComponent } from "./about-us/about-us.component";
+import { MainBannerComponent } from "./shared/components/main-banner/main-banner.component";
+import { MainPageComponent } from "./main-page/main-page.component";
+import { PromotionsComponent } from "./promotions/promotions.component";
 import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SpacePipe } from './shared/pipes/space.pipe';
-import { HeaderLoggedComponent } from './header/header-logged/header-logged.component';
+import { HeaderLoggedComponent } from './header-logged/header-logged.component';
 import { PizzaViewComponent } from './shared/pizza-view/pizza-view.component';
 
 
@@ -45,7 +45,7 @@ import { PizzaViewComponent } from './shared/pizza-view/pizza-view.component';
     BrowserAnimationsModule,
     SwiperModule,
     MatButtonModule,
-    RoutingModule,
+    AppRoutingModule,
     HttpClientModule,
     LoginModule,
     MatBadgeModule

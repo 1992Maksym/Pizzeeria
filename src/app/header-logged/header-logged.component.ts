@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { AuthGuardService } from 'src/app/shared/services/auth-guard.service';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthGuardService } from 'src/app/core/services/auth-guard.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header-logged',
