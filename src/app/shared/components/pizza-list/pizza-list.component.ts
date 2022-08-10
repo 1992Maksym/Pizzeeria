@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { PizzaServerService } from '../../core/services/pizza-server.service';
-import { Pizza } from '../interfaces/pizza';
+import { PizzaServerService } from '../../../core/services/pizza-server.service';
+import { Pizza } from '../../interfaces/pizza';
 // import { PizzaViewService } from '../services/pizza-view.service';
 
 

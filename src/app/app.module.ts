@@ -18,11 +18,11 @@ import { AboutUsComponent } from "./about-us/about-us.component";
 import { MainBannerComponent } from "./shared/components/main-banner/main-banner.component";
 import { MainPageComponent } from "./main-page/main-page.component";
 import { PromotionsComponent } from "./promotions/promotions.component";
-import { PizzaListComponent } from './shared/pizza-list/pizza-list.component';
+import { PizzaListComponent } from './shared/components/pizza-list/pizza-list.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SpacePipe } from './shared/pipes/space.pipe';
 import { HeaderLoggedComponent } from './header-logged/header-logged.component';
-import { PizzaViewComponent } from './shared/pizza-view/pizza-view.component';
+import { PizzaViewComponent } from './shared/components/pizza-view/pizza-view.component';
 
 
 @NgModule({

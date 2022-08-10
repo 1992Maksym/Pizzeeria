@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pizza } from '../interfaces/pizza';
+import { Pizza } from '../../interfaces/pizza';
 
 @Component({
   selector: 'app-pizza-view',
@@ -8,7 +8,7 @@ import { Pizza } from '../interfaces/pizza';
   styleUrls: ['./pizza-view.component.scss']
 })
 export class PizzaViewComponent implements OnInit{
-  
+
   pizza: Pizza= {} as Pizza;
   constructor(private route: ActivatedRoute) {}
 

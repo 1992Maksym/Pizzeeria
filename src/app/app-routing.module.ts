@@ -9,7 +9,7 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {UserComponent} from "./login/user/user.component";
 import {AdminComponent} from "./login/admin/admin.component";
 import { UserAuthGuard } from "./shared/guards/user-auth.guard";
-import { PizzaViewComponent } from "./shared/pizza-view/pizza-view.component";
+import { PizzaViewComponent } from "./shared/components/pizza-view/pizza-view.component";
 import { PizzaViewResolver } from "./core/services/pizza-view.resolver";
 import { PizzaListResolver } from "./core/services/pizza-list.resolver";
 
