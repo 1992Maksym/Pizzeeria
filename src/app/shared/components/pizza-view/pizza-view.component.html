@@ -1,1 +1,18 @@
-<h2>Pizza {{ pizza.title }}</h2>
+<div class="pizzaView-block">
+  <div class="container">
+    <div class="pizzaView-wrap">
+      <div class="pizzaView-img-block">
+        <img src={{pizza.image}} alt="">
+      </div>
+      <div class="pizzaView-body">
+        <h1 class="pizzaView-title">Pizza {{ pizza.title }}</h1>
+        <div class="pizzaView-description">{{ pizza.description | space }}</div>
+        <div class="pizzaView-size">
+          <div class="size-title">Выберите размер пиццы</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
