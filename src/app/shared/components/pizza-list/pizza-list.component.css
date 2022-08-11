@@ -30,17 +30,19 @@
     -o-transition: all .2s;
     transition: all .2s;
     border: 1px solid transparent;
+    max-width: 270px;
 }
 .pizza-list-item:hover{
     box-shadow: none;
     border: 1px solid rgba(43,74,69,.2);
 }
+
 .pizza-title{
     color: #2b4a45;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 4px;
-    padding: 12 12px 0px;
+    padding: 12px 12px 0px;
     text-align: center;
 }
 .pizza-description{

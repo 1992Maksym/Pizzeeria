@@ -1,7 +1,7 @@
 {
   "pizza_arr": [
     {
-      "image": "img/napoletana.jfif",
+      "image": "../../../assets/img/pizza1.jfif",
       "title": "Napoletana",
       "size": [
         25,
@@ -24,7 +24,7 @@
       "id": "1"
     },
     {
-      "image": "img/4chees.jpg",
+      "image": "../../../assets/img/pizza2.jfif",
       "title": "4chees",
       "size": [
         25,
@@ -46,7 +46,7 @@
       "id": "2"
     },
     {
-      "image": "img/mexicano.jfif",
+      "image": "../../../assets/img/pizza3.jfif",
       "title": "Mexicano",
       "size": [
         25,
@@ -65,11 +65,11 @@
         "огурец",
         "помидор"
       ],
-      "titleId": "pizzaMexicano",
+      "titleId": "../../../../assets/pizzaMexicano",
       "id": "3"
     },
     {
-      "image": "img/hawaii.jfif",
+      "image": "../../../assets/img/pizza4.jfif",
       "title": "Hawaii",
       "size": [
         25,
