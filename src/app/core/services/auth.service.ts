@@ -19,7 +19,7 @@ export class AuthService {
     this.http.get(this.dbDataUsers).pipe(
       tap((arr: any) => {
         arr.map((el: User) => {
-          if(el.email == loginForm.email && el.password == loginForm.password){
+          if(el.email === loginForm.email && el.password === loginForm.password){
             this.userLogged$.next(el);
 
             if(el.type === 'admin') {

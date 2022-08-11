@@ -373,18 +373,32 @@
       "id": 2
     },
     {
-      "name": "Bob",
-      "email": "maksimsalov8@gmail.com",
-      "password": "Bob12345",
+      "name": "baba",
+      "email": "babak@meta.ua",
+      "password": "babak12345",
       "type": "user",
       "id": 3
     },
     {
-      "name": "harry",
-      "email": "harry@meta.ua",
-      "password": "harry123",
+      "name": "vava",
+      "email": "vava@meta.ua",
+      "password": "vava12345",
       "type": "user",
       "id": 4
+    },
+    {
+      "name": "sasa",
+      "email": "asasa@meta.ua",
+      "password": "sasa12345",
+      "type": "user",
+      "id": 5
+    },
+    {
+      "name": "vasia",
+      "email": "vasia@meta.ua",
+      "password": "vasia12345",
+      "type": "user",
+      "id": 6
     }
   ],
   "banner_items": [

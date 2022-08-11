@@ -23,8 +23,10 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.route.fragment.subscribe(el => this.fragment = el)
-    this.viewportScroller.scrollToAnchor(this.fragment);
+    this.route.fragment.subscribe(el => {
+      this.fragment = el;
+      this.viewportScroller.scrollToAnchor(this.fragment);
+    })
   }
 
 }
