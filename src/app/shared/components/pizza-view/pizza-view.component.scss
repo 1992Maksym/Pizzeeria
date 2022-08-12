@@ -56,6 +56,86 @@
           font-size: 18px;
         }
       }
+
+    }
+    .pizzaView-similar{
+      padding: 120px 0 50px;
+
+      .similar-title{
+        text-align: center;
+        font-size: 32px;
+        color: #42413D;
+        margin-bottom: 50px;
+      }
+      .similar-body{
+        display: flex;
+        justify-content: space-around;
+
+        .similar-item{
+          box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+          border-radius: 15px;
+          overflow: hidden;
+          margin-bottom: 24px;
+          -webkit-transition: all .2s;
+          -o-transition: all .2s;
+          transition: all .2s;
+          border: 1px solid transparent;
+          max-width: 270px;
+
+          .pizza-body-block{
+            padding: 20px;
+          }
+          .pizza-title{
+            color: #2b4a45;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 4px;
+            padding: 12px 12px 0px;
+            text-align: center;
+          }
+          .pizza-description{
+            color: #2b4a45;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+          }
+          .pizza-sizes{
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+          }
+          .pizza-size{
+            position: relative;
+          }
+          .pizza-size input{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: block;
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+            z-index: 100;
+          }
+          .pizza-size input[type="radio"]:checked + label{
+            background: grey;
+            opacity: 70%
+          }
+          .pizza-footer{
+            display: flex;
+            justify-content: space-between;
+          }
+          .pizza-price{
+            font-size: 18px;
+            color: #d9663b;
+          }
+        }
+        .similar-item:hover{
+          box-shadow: none;
+          border: 1px solid rgba(43,74,69,.2);
+        }
+      }
     }
   }
 }
