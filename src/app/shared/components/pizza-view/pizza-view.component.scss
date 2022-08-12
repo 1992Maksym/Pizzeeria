@@ -23,10 +23,37 @@
         .pizzaView-title{
           font-size: 40px;
           font-weight: 500;
+          color: #42413D;
         }
         .pizzaView-description{
           color: #8e8c89;
           font-size: 17px;
+        }
+        .pizzaView-size{
+          padding: 30px 0;
+
+          .size-title{
+            font-size: 20px;
+            color: #42413D;
+          }
+          .size-block{
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+          }
+          .size-block li{
+            padding: 5px 0;
+          }
+          .size-block input{
+            width: 13px;
+            height: 13px;
+          }
+          .size-block span{
+            padding: 0 0 0 5px;
+          }
+        }
+        .pizzaView-price{
+          font-size: 18px;
         }
       }
     }

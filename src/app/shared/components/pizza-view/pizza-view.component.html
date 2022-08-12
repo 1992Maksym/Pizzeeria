@@ -8,9 +8,25 @@
         <h1 class="pizzaView-title">Pizza {{ pizza.title }}</h1>
         <div class="pizzaView-description">{{ pizza.description | space }}</div>
         <div class="pizzaView-size">
-          <div class="size-title">Выберите размер пиццы</div>
-          
+          <div class="size-title">Выберите размер пиццы:</div>
+          <form [formGroup]="pizzaSizeForm" class="pizzaView-size-form">
+            <ul class="size-block">
+              <li>
+                <input class="size-form-item" type="radio" formControlName="price" value={{pizza.price[0]}} />
+                <span>{{pizza.size[0]}}cm</span>
+              </li>
+              <li>
+                <input class="size-form-item" type="radio" formControlName="price" value={{pizza.price[1]}} />
+                <span>{{pizza.size[1]}}cm</span>
+              </li>
+              <li>
+                <input class="size-form-item" type="radio" formControlName="price" value={{pizza.price[2]}} />
+                <span>{{pizza.size[2]}}cm</span>
+              </li>
+            </ul>
+          </form>
         </div>
+        <div class="pizzaView-price">Цена: {{ pizzaSizeForm.value.price | json }}гр</div>
       </div>
     </div>
   </div>
