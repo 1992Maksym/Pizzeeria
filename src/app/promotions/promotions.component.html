@@ -1,13 +1,13 @@
 <div class="promotions-wrap">
     <div class="promotions-container">
         <div class="promotions-title">Акции</div>
-        <div class="promotions-item" *ngFor="let promotion of promotions$ | async">
+        <div class="promotions-item" *ngFor="let promotion of promotions$ | async" style="margin-top: 300px; margin-bottom: 300px">
             <div class="promotion-img-wrap">
                 <img class="promotion-img" src="{{promotion.img}}" alt="">
             </div>
             <div class="promotion-title" id="promo{{promotion.id}}">{{ promotion.title }}</div>
             <div class="promotion-description">{{ promotion.description }}</div>
         </div>
-        
+
     </div>
 </div>

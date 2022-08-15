@@ -6,9 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SpacePipe implements PipeTransform {
 
   transform(arr:string[]) {
-    // return arr.map(el => {
-    //   return (" " + el);
-    // });
     return arr.join(', ');
   }
 

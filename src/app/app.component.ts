@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Pizzeria';
+export class AppComponent implements AfterViewInit{
+  constructor(
+
+  ) {}
+  // title = 'Pizzeria';
+  ngAfterViewInit() {
+
+  }
 }

@@ -33,7 +33,9 @@ export class RegistrationService {
           }else{
                 user.type = 'user';
                 this.authGuard.userIsLog();
-                this.authService.userLogged$.next(user);
+                localStorage.setItem(this.authService.localUser, JSON.stringify(el));
+
+                // this.authService.userLogged$.next(user);
                 this.router.navigate(['user', user.name]);
                 return this.http.post(this.dbUsers,user);
           }

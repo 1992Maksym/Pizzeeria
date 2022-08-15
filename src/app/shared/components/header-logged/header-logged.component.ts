@@ -16,13 +16,16 @@ export class HeaderLoggedComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router, private authGuard: AuthGuardService) { }
 
   userTypeCheck(){
-    if(this.auth.userLogged$.getValue().type === 'user'){
-      this.userLogged$.next(true)
+    if(JSON.parse(localStorage.getItem(this.auth.localUser) || '{}').type === 'user'){
+      this.userLogged$.next(true);
     }
   }
   ngOnInit(): void {
-    this.userLoggedName$.next(this.auth.userLogged$.getValue().name);
+    const user = JSON.parse(localStorage.getItem(this.auth.localUser) || '{}');
+    // this.userLoggedName$.next(this.auth.userLogged$.getValue().name);
+    this.userLoggedName$.next(user.name);
     this.userTypeCheck();
+    console.log('user.name: ' + user.name);
   }
   logOut(){
     this.authGuard.userIsLogout();

@@ -32,7 +32,4 @@ import {PromotionsComponent} from "./promotions/promotions.component";
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
-  //   matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityResourceUrl('/assets/mdi.svg'));
-  // }
 }

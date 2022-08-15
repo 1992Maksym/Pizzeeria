@@ -6,17 +6,21 @@ import { User } from '../../shared/interfaces/user.interface';
   providedIn: 'root'
 })
 export class AuthGuardService {
-  // admin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  user: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  // user: BehaviorSubject<User> = new BehaviorSubject<User>({name: '', email: '', type: '', password: ''});
+  localUser:string = 'localGuard';
+  user: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(JSON.parse(localStorage.getItem(this.localUser) || 'false'));
 
   constructor() { }
 
   userIsLog(){
     this.user.next(true);
+    localStorage.setItem(this.localUser, JSON.stringify(true));
   }
   userIsLogout(){
     this.user.next(false);
+    localStorage.setItem(this.localUser, JSON.stringify(false));
+  }
+  verifyUser(){
+
   }
 
 }
