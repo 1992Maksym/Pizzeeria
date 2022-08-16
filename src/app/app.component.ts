@@ -10,7 +10,5 @@ export class AppComponent implements AfterViewInit{
 
   ) {}
   // title = 'Pizzeria';
-  ngAfterViewInit() {
-
-  }
+  ngAfterViewInit() {}
 }

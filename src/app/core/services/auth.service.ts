@@ -12,7 +12,7 @@ import { AuthGuardService } from './auth-guard.service';
 export class AuthService implements OnInit{
   userLogged$: BehaviorSubject<User> = new BehaviorSubject<User>({name: '',email: '',password: '',type: ''});
   dbDataUsers = 'http://localhost:3001/users';
-  localUser: string = '';
+  localUser: string = 'localService';
 
   constructor(private http: HttpClient,private router: Router, private authGuard: AuthGuardService) { }
 

@@ -195,6 +195,13 @@
       "password": "Max12345",
       "type": "user",
       "id": 2
+    },
+    {
+      "name": "karl",
+      "email": "karl@meta.ua",
+      "password": "12345karl",
+      "type": "user",
+      "id": 3
     }
   ],
   "banner_items": [

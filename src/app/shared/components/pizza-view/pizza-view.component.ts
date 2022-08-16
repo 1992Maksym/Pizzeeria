@@ -12,7 +12,8 @@ import {BehaviorSubject} from "rxjs";
   styleUrls: ['./pizza-view.component.scss']
 })
 export class PizzaViewComponent implements OnInit{
-  similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([])
+  similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
+
 
   pizza: Pizza= {} as Pizza;
   constructor(
@@ -28,6 +29,7 @@ export class PizzaViewComponent implements OnInit{
   pizzaSizeForm = new FormGroup({
     price: new FormControl(0),
   });
+
 
   randomPizza(pizzaListArr: Pizza[], randomPizzaArr: Pizza[]){
     for (let i=0; i<3; i++){

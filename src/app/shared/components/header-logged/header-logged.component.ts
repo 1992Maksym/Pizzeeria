@@ -22,7 +22,6 @@ export class HeaderLoggedComponent implements OnInit {
   }
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem(this.auth.localUser) || '{}');
-    // this.userLoggedName$.next(this.auth.userLogged$.getValue().name);
     this.userLoggedName$.next(user.name);
     this.userTypeCheck();
     console.log('user.name: ' + user.name);
