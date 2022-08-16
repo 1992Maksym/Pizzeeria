@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { AuthGuardService } from 'src/app/core/services/auth-guard.service';
+import { GuardService } from 'src/app/core/services/guard.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LocalStrorageService } from "../../../core/services/local-strorage.service";
 
@@ -17,7 +17,7 @@ export class HeaderLoggedComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private authGuard: AuthGuardService,
+    private authGuard: GuardService,
     private localStrorageService: LocalStrorageService,
   ) { }
 
@@ -27,10 +27,10 @@ export class HeaderLoggedComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    const user = JSON.parse(localStorage.getItem(this.auth.localAuth) || '{}');
+    // const user = JSON.parse(localStorage.getItem(this.auth.localAuth) || '{}');
+    const user = this.localStrorageService.getToLocalStorage(this.localStrorageService.localAuth);
     this.userLoggedName$.next(user.name);
     this.userTypeCheck();
-    console.log('user.name: ' + user.name);
   }
   logOut(){
     this.authGuard.userIsLogout();

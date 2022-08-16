@@ -5,7 +5,7 @@ import { User } from '../../shared/interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService {
+export class GuardService {
   localUser:string = 'localGuard';
   user: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(JSON.parse(localStorage.getItem(this.localUser) || 'false'));
 

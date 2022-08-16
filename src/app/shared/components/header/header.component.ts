@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnChanges, OnInit} from '@angular/core';
 import {BehaviorSubject, filter} from 'rxjs';
 import { User } from '../../interfaces/user.interface';
-import { AuthGuardService } from '../../../core/services/auth-guard.service';
+import { GuardService } from '../../../core/services/guard.service';
 import {Router, Scroll} from "@angular/router";
 import { ViewportScroller } from '@angular/common';
 
@@ -13,9 +13,8 @@ import { ViewportScroller } from '@angular/common';
 export class HeaderComponent implements OnInit{
 
   userLogged$: BehaviorSubject<boolean> = this.authGuard.user;
-  // userLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private authGuard: AuthGuardService, private router: Router, private viewportScroller: ViewportScroller,) { }
+  constructor(private authGuard: GuardService, private router: Router, private viewportScroller: ViewportScroller,) { }
 
   ngOnInit(): void {
   }

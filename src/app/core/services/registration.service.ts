@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { switchMap, of, catchError } from 'rxjs';
 import { User } from '../../shared/interfaces/user.interface';
 import { MessageService } from 'primeng/api';
-import { AuthGuardService } from './auth-guard.service';
+import { GuardService } from './guard.service';
 import { Router } from '@angular/router';
 import {AuthService} from "./auth.service";
+import {LocalStrorageService} from "./local-strorage.service";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,10 @@ export class RegistrationService {
   constructor(
     private http: HttpClient,
     private messageService: MessageService,
-    private authGuard: AuthGuardService,
+    private authGuard: GuardService,
     private authService: AuthService,
     private router: Router,
+    private localStrorageService: LocalStrorageService,
     ) { }
 
   registerUser(user: User){
@@ -28,15 +30,13 @@ export class RegistrationService {
       switchMap((el:any) => {
           if(el[0]){
             throw new Error();
-            console.log(el);
             return of(null);
           }else{
                 user.type = 'user';
                 this.authGuard.userIsLog();
-                console.log('el: ' + user);
-                localStorage.setItem(this.authService.localAuth, JSON.stringify(user));
+                this.localStrorageService.setToLocalStorage(this.localStrorageService.localAuth, user)
+                // localStorage.setItem(this.authService.localAuth, JSON.stringify(user));
 
-                // this.authService.userLogged$.next(user);
                 this.router.navigate(['user', user.name]);
                 return this.http.post(this.dbUsers,user);
           }

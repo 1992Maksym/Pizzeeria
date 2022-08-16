@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {AuthService} from "./auth.service";
+import {BehaviorSubject} from "rxjs";
+import {User} from "../../shared/interfaces/user.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,14 @@ import {AuthService} from "./auth.service";
 export class LocalStrorageService {
   localAuth:string =  'localService';
 
-  constructor(private auth: AuthService) { }
+  constructor() {}
 
+  setToLocalStorage(key:string, value: any){
+    localStorage.setItem(key,JSON.stringify(value));
+  }
+
+  getToLocalStorage(key:string){
+    return JSON.parse(localStorage.getItem(key) || '{}');
+  }
 
 }
