@@ -14,6 +14,7 @@ import { HeaderLoggedComponent } from "./components/header-logged/header-logged.
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
 import { AppRoutingModule } from "../app-routing.module";
+import { WithoutQuotesPipe } from './pipes/without-quotes.pipe';
 
 
 
@@ -27,6 +28,7 @@ import { AppRoutingModule } from "../app-routing.module";
     FooterComponent,
     HeaderComponent,
     HeaderLoggedComponent,
+    WithoutQuotesPipe,
   ],
   exports: [
     SpacePipe,
@@ -37,6 +39,7 @@ import { AppRoutingModule } from "../app-routing.module";
     FooterComponent,
     HeaderComponent,
     HeaderLoggedComponent,
+    WithoutQuotesPipe,
   ],
   imports: [
     CommonModule,

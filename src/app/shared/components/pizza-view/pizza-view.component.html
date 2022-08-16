@@ -26,7 +26,7 @@
             </ul>
           </form>
         </div>
-        <div class="pizzaView-price">Цена: {{ pizzaSizeForm.value.price | json }}гр</div>
+        <div class="pizzaView-price">Цена: {{ (pizzaSizeForm.value.price | json) | withoutQuotes }}гр</div>
       </div>
     </div>
     <div class="pizzaView-similar">
