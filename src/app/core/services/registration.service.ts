@@ -34,7 +34,7 @@ export class RegistrationService {
                 user.type = 'user';
                 this.authGuard.userIsLog();
                 console.log('el: ' + user);
-                localStorage.setItem(this.authService.localUser, JSON.stringify(user));
+                localStorage.setItem(this.authService.localAuth, JSON.stringify(user));
 
                 // this.authService.userLogged$.next(user);
                 this.router.navigate(['user', user.name]);

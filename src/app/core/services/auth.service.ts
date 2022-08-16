@@ -12,7 +12,7 @@ import { AuthGuardService } from './auth-guard.service';
 export class AuthService implements OnInit{
   userLogged$: BehaviorSubject<User> = new BehaviorSubject<User>({name: '',email: '',password: '',type: ''});
   dbDataUsers = 'http://localhost:3001/users';
-  localUser: string = 'localService';
+  localAuth: string = 'localService';
 
   constructor(private http: HttpClient,private router: Router, private authGuard: AuthGuardService) { }
 
@@ -22,7 +22,7 @@ export class AuthService implements OnInit{
         arr.map((el: User) => {
           if(el.email === loginForm.email && el.password === loginForm.password){
             // this.userLogged$.next(el);
-            localStorage.setItem(this.localUser, JSON.stringify(el));
+            localStorage.setItem(this.localAuth, JSON.stringify(el));
 
             if(el.type === 'admin') {
               this.authGuard.userIsLog();
