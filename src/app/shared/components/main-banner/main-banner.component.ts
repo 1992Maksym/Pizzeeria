@@ -33,7 +33,7 @@ export class MainBannerComponent implements OnInit {
     }
   };
 
-  onSwiper([swiper]: any) {
+  onSwiper() {
     // console.log('swiper');
   }
 

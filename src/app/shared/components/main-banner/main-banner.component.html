@@ -1,6 +1,6 @@
 <swiper
   [config]="config"
-  (swiper)="onSwiper($event)"
+  (swiper)="onSwiper()"
   (slideChange)="onSlideChange()"
 >
   <ng-template class="slide" swiperSlide *ngFor="let slide of slides$ | async">
