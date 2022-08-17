@@ -25,9 +25,9 @@ export class MainBannerComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 1,
     // spaceBetween: 50,
-    // navigation: true,
+    navigation: true,
     // pagination: { clickable: true },
-    scrollbar: {draggable: true},
+    // scrollbar: {draggable: true},
     autoplay: {
       delay: 2500
     }
