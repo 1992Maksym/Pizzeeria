@@ -3,14 +3,18 @@
 }
 .pizza-title{
   margin-bottom: 4px;
-  padding: 12px 12px 0px;
+  padding: 12px 0px;
   text-align: center;
+}
+.pizza-title:hover{
+  cursor: pointer;
 }
 .pizza-title h3{
   color: #212529;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
+  margin: 0;
 }
 .pizza-description{
   color: #6c757d;
