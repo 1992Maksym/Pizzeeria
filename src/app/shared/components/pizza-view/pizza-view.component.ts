@@ -14,7 +14,6 @@ import {BehaviorSubject} from "rxjs";
 export class PizzaViewComponent implements OnInit{
   similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
 
-
   pizza: Pizza= {} as Pizza;
   constructor(
     private route: ActivatedRoute,

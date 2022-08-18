@@ -15,6 +15,8 @@ import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
 import { AppRoutingModule } from "../app-routing.module";
 import { WithoutQuotesPipe } from './pipes/without-quotes.pipe';
+import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
+import { PizzaSizesFormComponent } from './components/pizza-sizes-form/pizza-sizes-form.component';
 
 
 
@@ -29,6 +31,8 @@ import { WithoutQuotesPipe } from './pipes/without-quotes.pipe';
     HeaderComponent,
     HeaderLoggedComponent,
     WithoutQuotesPipe,
+    PizzaCardComponent,
+    PizzaSizesFormComponent,
   ],
   exports: [
     SpacePipe,

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import { BehaviorSubject } from 'rxjs';
 // import { PizzaServerService } from '../../../core/services/pizza-server.service';
 import { Pizza } from '../../interfaces/pizza';
+import {FormControl, FormGroup} from "@angular/forms";
 // import { PizzaViewService } from '../services/pizza-view.service';
 
 
@@ -20,6 +21,10 @@ export class PizzaListComponent implements OnInit {
     private route: ActivatedRoute,
     ) { }
 
+  // pizzaSizeForm = new FormGroup({
+  //   price: new FormControl(0),
+  // });
+
   ngOnInit(): void {
     this.pizzaArr = this.route.snapshot.data['pizzaList'];
     // this.pizzaServer.getPizzaData()
@@ -28,7 +33,7 @@ export class PizzaListComponent implements OnInit {
   // pizzaArr$:BehaviorSubject<Pizza[]> = this.pizzaServer.pizzaArr$;
 
 
-  showPizza(pizza: Pizza){
-    this.router.navigate(['pizza', pizza.id]);
-  }
+  // showPizza(pizza: Pizza){
+  //   this.router.navigate(['pizza', pizza.id]);
+  // }
 }

@@ -29,16 +29,16 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.router.events.pipe(filter(e => e instanceof Scroll)).subscribe((e: any) => {
-      console.log(e);
-      this.viewportScroller.scrollToAnchor(e.anchor);
-    })
-    // this.route.fragment.subscribe(el => {
-    //   this.fragment = el;
-    //   if (this.fragment != null) {
-    //     this.viewportScroller.scrollToAnchor(this.fragment);
-    //   }
+    // this.router.events.pipe(filter(e => e instanceof Scroll)).subscribe((e: any) => {
+    //   console.log(e);
+    //   this.viewportScroller.scrollToAnchor(e.anchor);
     // })
+    this.route.fragment.subscribe(el => {
+      this.fragment = el;
+      if (this.fragment != null) {
+        this.viewportScroller.scrollToAnchor(this.fragment);
+      }
+    })
   }
 
 }
