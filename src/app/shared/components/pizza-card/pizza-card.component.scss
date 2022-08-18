@@ -1,3 +1,6 @@
+.pizza-body-block{
+  padding: 10px 20px;
+}
 .pizza-title{
   margin-bottom: 4px;
   padding: 12px 12px 0px;
@@ -16,34 +19,10 @@
   text-align: center;
   min-height: 50px;
 }
-.pizza-sizes{
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
-}
-.pizza-size{
-  position: relative;
-}
-.pizza-size input{
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: block;
-  position: absolute;
-  clip: rect(0,0,0,0);
-  pointer-events: none;
-  z-index: 100;
-}
-.pizza-size input[type="radio"]:checked + label{
-  background: grey;
-  opacity: 70%
-}
 .pizza-footer{
   display: flex;
   justify-content: space-between;
+  margin: 30px 0 0 0;
 }
 .pizza-price{
   font-size: 18px;

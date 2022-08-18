@@ -3,27 +3,11 @@
   <div class="pizza-title" (click)="showPizza(item)"><h3>{{ item.title }}</h3></div>
   <div class="pizza-description">{{ item.description | space }}</div>
   <div class="pizza-form">
-    <form [formGroup]="pizzaSizeForm" class="pizzaView-size-form">
-      <ul class="size-block  pizza-sizes">
-        <li class="pizza-size">
-          <input class="size-form-item" id="{{item.titleId}}Small" type="radio" formControlName="price" value={{item.price[0]}} />
-          <label for="{{item.titleId}}Small">{{item.size[0]}}cm</label>
-        </li>
-        <li class="pizza-size">
-          <input class="size-form-item" id="{{item.titleId}}Medium" type="radio" formControlName="price" value={{item.price[1]}} />
-          <label for="{{item.titleId}}Medium">{{item.size[1]}}cm</label>
-        </li>
-        <li class="pizza-size">
-          <input class="size-form-item" id="{{item.titleId}}Large" type="radio" formControlName="price" value={{item.price[2]}} />
-          <label for="{{item.titleId}}Large">{{item.size[2]}}cm</label>
-        </li>
-      </ul>
-    </form>
+    <app-pizza-sizes-form [item]="item" (checkboxSizes)="getPrice($event)"></app-pizza-sizes-form>
   </div>
   <div class="pizza-footer">
     <div class="pizza-price">
-      <!--                        {{ item.price[0] }} грн-->
-      {{ (pizzaSizeForm.value.price | json) | withoutQuotes }}гр
+      {{ pizzaPrice$ | async }}гр
     </div>
     <div class="pizza-order">
       <svg width="23" height="23" fill="none" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">

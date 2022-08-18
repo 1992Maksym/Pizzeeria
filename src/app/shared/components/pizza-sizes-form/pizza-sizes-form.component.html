@@ -1,1 +1,16 @@
-<p>pizza-sizes-form works!</p>
+<form [formGroup]="pizzaSizeForm" class="pizzaView-size-form">
+  <ul class="size-block  pizza-sizes">
+    <li class="pizza-size">
+      <input class="size-form-item" id="{{item.titleId}}Small" type="radio" (change)="changeSize()" formControlName="price" value={{item.price[0]}} />
+      <label for="{{item.titleId}}Small">{{item.size[0]}}cm</label>
+    </li>
+    <li class="pizza-size">
+      <input class="size-form-item" id="{{item.titleId}}Medium" type="radio" (change)="changeSize()" formControlName="price" value={{item.price[1]}} />
+      <label for="{{item.titleId}}Medium">{{item.size[1]}}cm</label>
+    </li>
+    <li class="pizza-size">
+      <input class="size-form-item" id="{{item.titleId}}Large" type="radio" (change)="changeSize()" formControlName="price" value={{item.price[2]}} />
+      <label for="{{item.titleId}}Large">{{item.size[2]}}cm</label>
+    </li>
+  </ul>
+</form>

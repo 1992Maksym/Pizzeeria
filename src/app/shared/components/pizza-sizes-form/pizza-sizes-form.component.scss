@@ -1,0 +1,38 @@
+.pizzaView-size-form{
+
+  .pizza-sizes{
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+
+    .pizza-size{
+      position: relative;
+
+      input{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        position: absolute;
+        clip: rect(0,0,0,0);
+        pointer-events: none;
+        z-index: 100;
+        border: 1px solid grey;
+      }
+      input[type="radio"]:checked + label{
+        background: #2b4a45;
+        color: #fff;
+        opacity: 70%
+      }
+      label{
+        color:#2b4a45;
+        background: #e8eceb;
+        border-radius: 10px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
