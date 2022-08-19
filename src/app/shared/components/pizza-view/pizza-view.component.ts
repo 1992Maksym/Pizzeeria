@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
 import {LocalStrorageService} from "../../../core/services/local-strorage.service";
 import {OrderPizza} from "../../interfaces/order-pizza";
+import {CartComponent} from "../cart/cart.component";
 
 @Component({
   selector: 'app-pizza-view',
@@ -26,7 +27,8 @@ export class PizzaViewComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private storage: LocalStrorageService
+    private storage: LocalStrorageService,
+    private cart: CartComponent,
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +63,7 @@ export class PizzaViewComponent implements OnInit{
   }
   setToCart(){
     this.createOrder();
+    this.cart.orderArr$ = this.orderArr$;
     this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr$.getValue());
   }
 
@@ -73,7 +76,7 @@ export class PizzaViewComponent implements OnInit{
     order.price = this.pizzaSizeForm.value.price;
     this.orderArr$.pipe(
       tap(el => el.push(order)),
-      tap(el => console.log(el))
+      tap(el => console.log(el)),
     ).subscribe()
   }
 

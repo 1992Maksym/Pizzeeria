@@ -1,0 +1,42 @@
+.order-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  box-shadow: 0 6px 4px -4px lightgray;
+
+  .order-body{
+    display: flex;
+
+    .order-image img{
+      width: 200px;
+      height: 100px;
+      border-radius: 10px;
+    }
+    .order-description{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 50px;
+
+      .order-title{
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .order-size{
+        font-size: 15px;
+      }
+      .order-price{
+        font-size: 17px;
+      }
+    }
+  }
+  .order-amount{
+    display: flex;
+    align-items: center;
+
+    .amount-item{
+      padding: 0 10px;
+    }
+  }
+}

@@ -1,1 +1,17 @@
-<p>pizza-order works!</p>
+<div class="order-wrap">
+  <div class="order-body">
+    <div class="order-image">
+      <img src={{order.image}}>
+    </div>
+    <div class="order-description">
+      <div class="order-title">{{order.title}}</div>
+      <div class="order-size">{{order.size}}см</div>
+      <div class="order-price">{{order.price}}гр</div>
+    </div>
+  </div>
+  <div class="order-amount">
+    <button mat-stroked-button>-</button>
+    <div class="amount-item">0</div>
+    <button mat-stroked-button>+</button>
+  </div>
+</div>
