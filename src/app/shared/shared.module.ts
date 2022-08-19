@@ -18,6 +18,7 @@ import { WithoutQuotesPipe } from './pipes/without-quotes.pipe';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { PizzaSizesFormComponent } from './components/pizza-sizes-form/pizza-sizes-form.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PizzaOrderComponent } from './components/pizza-order/pizza-order.component';
 
 
 
@@ -35,6 +36,7 @@ import { CartComponent } from './components/cart/cart.component';
     PizzaCardComponent,
     PizzaSizesFormComponent,
     CartComponent,
+    PizzaOrderComponent,
   ],
   exports: [
     SpacePipe,

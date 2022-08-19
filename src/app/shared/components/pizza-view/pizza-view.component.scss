@@ -56,6 +56,14 @@
           font-size: 18px;
         }
       }
+      .pizzaView-footer{
+        display: flex;
+        align-items: center;
+
+        .pizzaView-cart{
+          margin-left: 50px;
+        }
+      }
 
     }
     .pizzaView-similar{

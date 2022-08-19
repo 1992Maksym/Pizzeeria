@@ -5,6 +5,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { tap, map } from "rxjs/operators";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
+import {LocalStrorageService} from "../../../core/services/local-strorage.service";
+import {OrderPizza} from "../../interfaces/order-pizza";
 
 @Component({
   selector: 'app-pizza-view',
@@ -13,11 +15,18 @@ import {BehaviorSubject} from "rxjs";
 })
 export class PizzaViewComponent implements OnInit{
   similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
+  orderArr$:BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
 
-  pizza: Pizza= {} as Pizza;
+  pizza: Pizza = {} as Pizza;
+  // orderPizza: OrderPizza = {} as OrderPizza;
+
+  pizzaSize:number = 0;
+
+
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private storage: LocalStrorageService
   ) {}
 
   ngOnInit(): void {
@@ -26,7 +35,7 @@ export class PizzaViewComponent implements OnInit{
   }
 
   pizzaSizeForm = new FormGroup({
-    price: new FormControl(0),
+    price: new FormControl<number>(0),
   });
 
 
@@ -46,6 +55,26 @@ export class PizzaViewComponent implements OnInit{
         }),
         tap(el => this.similarPizzas$.next(arr))
         ).subscribe()
+  }
+  getSize(size: number){
+    this.pizzaSize = size;
+  }
+  setToCart(){
+    this.createOrder();
+    this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr$.getValue());
+  }
+
+  createOrder(){
+    const order:OrderPizza = {} as OrderPizza;
+    order.size = this.pizzaSize;
+    order.image = this.pizza.image;
+    order.title = this.pizza.title;
+    order.id = this.pizza.id;
+    order.price = this.pizzaSizeForm.value.price;
+    this.orderArr$.pipe(
+      tap(el => el.push(order)),
+      tap(el => console.log(el))
+    ).subscribe()
   }
 
 
