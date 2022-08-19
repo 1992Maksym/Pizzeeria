@@ -17,6 +17,7 @@ import { AppRoutingModule } from "../app-routing.module";
 import { WithoutQuotesPipe } from './pipes/without-quotes.pipe';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { PizzaSizesFormComponent } from './components/pizza-sizes-form/pizza-sizes-form.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -33,6 +34,7 @@ import { PizzaSizesFormComponent } from './components/pizza-sizes-form/pizza-siz
     WithoutQuotesPipe,
     PizzaCardComponent,
     PizzaSizesFormComponent,
+    CartComponent,
   ],
   exports: [
     SpacePipe,

@@ -12,6 +12,7 @@ import { UserAuthGuard } from "./shared/guards/user-auth.guard";
 import { PizzaViewComponent } from "./shared/components/pizza-view/pizza-view.component";
 import { PizzaViewResolver } from "./core/services/pizza-view.resolver";
 import { PizzaListResolver } from "./core/services/pizza-list.resolver";
+import {CartComponent} from "./shared/components/cart/cart.component";
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [UserAuthGuard] },
   { path: 'user/:id', component: UserComponent, canActivate: [UserAuthGuard] },
   { path: 'pizza/:id', component: PizzaViewComponent, resolve:{pizza: PizzaViewResolver} },
+  { path: 'cart', component: CartComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ]

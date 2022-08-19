@@ -1,8 +1,11 @@
 .logged-wrap{
     display: flex;
     align-items: center;
-    
+
     .logged-user, .cart{
         margin-right: 16px;
     }
+}
+.logged-wrap:hover{
+  cursor: pointer;
 }
