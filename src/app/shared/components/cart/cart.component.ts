@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {OrderPizza} from "../../interfaces/order-pizza";
 import {LocalStrorageService} from "../../../core/services/local-strorage.service";
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +11,19 @@ import {LocalStrorageService} from "../../../core/services/local-strorage.servic
 })
 export class CartComponent implements OnInit {
   orderArr$: BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
+  totalPrice$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(private storage: LocalStrorageService) { }
 
   ngOnInit(): void {
+    this.priceSum();
   }
 
+  priceSum(){
+    let priceOrder = 0;
+    this.orderArr$.pipe(
+      tap((el: OrderPizza[]) => priceOrder = el.reduce((sum,num) => num.price?sum + (+num.price) : 0,0)),
+      tap(el => this.totalPrice$.next(priceOrder))
+    ).subscribe()
+  }
 }

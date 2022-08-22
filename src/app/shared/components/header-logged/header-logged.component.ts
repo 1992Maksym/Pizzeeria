@@ -35,6 +35,7 @@ export class HeaderLoggedComponent implements OnInit {
   logOut(){
     this.authGuard.userIsLogout();
     this.router.navigate(['/']);
+    localStorage.clear();
   }
   navigateUser(){
     this.router.navigate(['user', this.userLoggedName$.getValue()]);

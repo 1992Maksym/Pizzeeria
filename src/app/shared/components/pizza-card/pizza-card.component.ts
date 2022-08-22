@@ -11,7 +11,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class PizzaCardComponent implements OnInit {
   @Input() item: Pizza = {} as Pizza;
-  pizzaPrice$: BehaviorSubject<string> = new BehaviorSubject<string>('0')
+  pizzaPrice = '0';
 
   constructor(private router: Router) { }
 
@@ -23,7 +23,7 @@ export class PizzaCardComponent implements OnInit {
   }
 
   getPrice(price: string){
-    this.pizzaPrice$.next(price);
+    this.pizzaPrice = price;
   }
 
 }
