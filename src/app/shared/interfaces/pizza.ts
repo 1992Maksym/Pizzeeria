@@ -2,7 +2,7 @@ export interface Pizza {
     image: string;
     title: string;
     size: number[];
-    price: string[];
+    price: number[];
     description: string[],
     titleId: string;
     id: string;

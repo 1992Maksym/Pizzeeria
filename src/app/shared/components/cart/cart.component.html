@@ -1,10 +1,16 @@
 <div class="cart-wrap">
   <div class="container">
-    <div class="cart-title">Ваш заказ</div>
-    <app-pizza-order class="order-item" *ngFor="let item of orderArr$ | async" [order]="item"></app-pizza-order>
-    <div class="total-price">
-      <div class="price-text">Сумма заказа: </div>
-      <div class="price-sum">{{ totalPrice$ | async }}гр</div>
+    <div class="orders" *ngIf="orderArr$.getValue().length >=1; else noOrders">
+      <div class="cart-title">Ваш заказ</div>
+      <app-pizza-order class="order-item" *ngFor="let item of orderArr$ | async" [order]="item"></app-pizza-order>
+      <div class="total-price">
+        <div class="price-text">Сумма заказа: </div>
+        <div class="price-sum">{{ totalPrice$ | async }}гр</div>
+      </div>
+      <div class="cleaning" (click)="clearCart()">очистить корзину</div>
     </div>
+    <ng-template #noOrders>
+      <span class="no-orders">У Вас нет заказов</span>
+    </ng-template>
   </div>
 </div>

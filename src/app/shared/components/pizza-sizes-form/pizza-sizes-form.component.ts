@@ -9,18 +9,24 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class PizzaSizesFormComponent implements OnInit {
   @Input() item: Pizza = {} as Pizza;
-  @Output() checkboxSizes: EventEmitter<any> = new EventEmitter<any>();
-
+  @Output() checkboxSizes: EventEmitter<{size: number, price: number|null|undefined, item: Pizza}> = new EventEmitter<{size: number, price: number|null|undefined, item: Pizza}>();
+  pizzaSize = 0
   constructor() { }
 
   ngOnInit(): void {
-    this.checkboxSizes.emit(this.pizzaSizeForm.value.price);
+    this.checkboxSizes.emit({size: this.pizzaSize, price: this.pizzaSizeForm.value.price, item: this.item});
   }
   pizzaSizeForm = new FormGroup({
     price: new FormControl(0),
   });
-  changeSize(){
-    this.checkboxSizes.emit(this.pizzaSizeForm.value.price);
+  changeSize(size: number){
+    this.pizzaSize = size;
+    const pizzaSizeAndPrice = {
+      size: size,
+      price: this.pizzaSizeForm.value.price,
+      item: this.item,
+    }
+    this.checkboxSizes.emit(pizzaSizeAndPrice);
   }
 
 }

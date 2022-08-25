@@ -4,4 +4,5 @@ export interface OrderPizza {
   size: number;
   price: number | null | undefined;
   id: string;
+  count: number;
 }
