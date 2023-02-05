@@ -15,9 +15,11 @@ import {OrderPizza} from "../../interfaces/order-pizza";
 })
 export class PizzaViewComponent implements OnInit, DoCheck{
   similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
-  orderArr$:BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
+  // orderArr$:BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
+  orderArr = this.storage.getOrderFromStorage(this.storage.localOrder);
 
   pizza: Pizza = {} as Pizza;
+  order:OrderPizza = {} as OrderPizza;
   pizzaSize:number = 0;
 
   pizzaSizeForm = new FormGroup({
@@ -57,20 +59,26 @@ export class PizzaViewComponent implements OnInit, DoCheck{
     this.pizzaSize = size;
   }
   setToCart(){
-    this.createOrder();
-    this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr$.getValue());
+    // this.createOrder();
+    this.orderArr.push(this.order);
+    this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
+    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr$.getValue());
   }
 
   createOrder(){
-    const order:OrderPizza = {} as OrderPizza;
-    order.size = this.pizzaSize;
-    order.image = this.pizza.image;
-    order.title = this.pizza.title;
-    order.id = this.pizza.id;
-    order.price = this.pizzaSizeForm.value.price;
-    this.orderArr$.pipe(
-      tap(el => el.push(order)),
-    ).subscribe()
+    this.order.size = this.pizzaSize;
+    this.order.image = this.pizza.image;
+    this.order.title = this.pizza.title;
+    this.order.id = this.pizza.id;
+    this.order.price = this.pizzaSizeForm.value.price;
+    this.order.count = 1;
+    // this.orderArr.push(this.order);
+
+    // this.orderArr$.pipe(
+    //   tap(el => el.push(order)),
+    // ).subscribe()
+    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
+
   }
 
 

@@ -6,21 +6,22 @@
       </div>
       <div class="pizzaView-body">
         <h1 class="pizzaView-title">Pizza {{ pizza.title }}</h1>
+        <span></span>
         <div class="pizzaView-description">{{ pizza.description | space }}</div>
         <div class="pizzaView-size">
           <div class="size-title">Выберите размер пиццы:</div>
           <form [formGroup]="pizzaSizeForm" class="pizzaView-size-form">
             <ul class="size-block">
               <li>
-                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[0])" formControlName="price" value={{pizza.price[0]}} />
+                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[0])" (click)="createOrder()" formControlName="price" value={{pizza.price[0]}} />
                 <span>{{pizza.size[0]}}cm</span>
               </li>
               <li>
-                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[1])" formControlName="price" value={{pizza.price[1]}} />
+                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[1])" (click)="createOrder()" formControlName="price" value={{pizza.price[1]}} />
                 <span>{{pizza.size[1]}}cm</span>
               </li>
               <li>
-                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[2])" formControlName="price" value={{pizza.price[2]}} />
+                <input class="size-form-item" type="radio" (change)="getSize(pizza.size[2])" (click)="createOrder()" formControlName="price" value={{pizza.price[2]}} />
                 <span>{{pizza.size[2]}}cm</span>
               </li>
             </ul>

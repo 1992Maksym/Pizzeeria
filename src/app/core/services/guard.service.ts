@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../../shared/interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +17,6 @@ export class GuardService {
   userIsLogout(){
     this.user.next(false);
     localStorage.setItem(this.localUser, JSON.stringify(false));
-  }
-  verifyUser(){
-
   }
 
 }

@@ -5,7 +5,7 @@
     <li routerLinkActive="active" routerLink="/promotions"><button mat-button class="mat-button">Акции</button></li>
   </ul>
 
-  <div class="header-login" *ngIf="userLogged$ | async; else nologged ">
+  <div class="header-login" *ngIf="userLogged$ | async; else nologged">
     <app-header-logged></app-header-logged>
   </div>
   <ng-template #nologged class="header-login">

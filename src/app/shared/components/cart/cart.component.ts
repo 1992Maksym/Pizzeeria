@@ -26,4 +26,9 @@ export class CartComponent implements OnInit {
       tap(el => this.totalPrice$.next(priceOrder))
     ).subscribe()
   }
+
+  clearCart(){
+    this.storage.setOrderToStorage(this.storage.localOrder, []);
+    this.orderArr$.next([])
+  }
 }

@@ -9,6 +9,5 @@ export class AppComponent implements AfterViewInit{
   constructor(
 
   ) {}
-  // title = 'Pizzeria';
   ngAfterViewInit() {}
 }

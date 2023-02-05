@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { Slide } from '../../shared/interfaces/slide';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class BannerSlidesService {
   constructor(private http: HttpClient) { }
 
   getBannerItems(){
-    this.http.get('http://localhost:3001/banner_items').pipe(
+    this.http.get('http://localhost:300/banner_items').pipe(
       tap((el:any) => this.bannerSlides$.next(el))
     ).subscribe()
   }

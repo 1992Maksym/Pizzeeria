@@ -13,7 +13,7 @@ export class PromotionsService {
   constructor(private http: HttpClient) { }
 
   getPromotions(){
-    this.http.get('http://localhost:3001/promotions').pipe(
+    this.http.get('http://localhost:3000/promotions').pipe(
       tap((el:any) => this.promotions$.next(el))
     ).subscribe()
   }
