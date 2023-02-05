@@ -14,12 +14,6 @@ import { PizzaViewResolver } from "./core/services/pizza-view.resolver";
 import { PizzaListResolver } from "./core/services/pizza-list.resolver";
 import {CartComponent} from "./shared/components/cart/cart.component";
 
-const routerOptions: ExtraOptions = {
-  useHash: false,
-  anchorScrolling: 'enabled',
-  // scrollPositionRestoration: 'enabled',
-};
-
 const routes: Routes = [
   { path: '', component: MainPageComponent, resolve:{pizzaList: PizzaListResolver} },
   { path: 'about-us', component: AboutUsComponent },

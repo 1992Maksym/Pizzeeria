@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap, map } from 'rxjs/operators'
-import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { Pizza } from 'src/app/shared/interfaces/pizza';
 
 @Injectable({
@@ -10,12 +9,8 @@ import { Pizza } from 'src/app/shared/interfaces/pizza';
 export class PizzaServerService {
     constructor(private http: HttpClient){}
 
-    dbData = 'http://localhost:3001/pizza_arr';
-    // pizzaArr$:BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
+    dbData = 'http://localhost:300/pizza_arr';
     getPizzaData(){
-        // this.http.get(this.dbData).pipe(
-        //     map((el:any) => this.pizzaArr$.next(el)),
-        //     ).subscribe()
         return this.http.get<Pizza>(this.dbData).pipe(
             map((el:Pizza) => el),
             )
