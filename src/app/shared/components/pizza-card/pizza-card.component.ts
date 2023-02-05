@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Pizza} from "../../interfaces/pizza";
-import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
-import {BehaviorSubject} from "rxjs";
 import {LocalStrorageService} from "../../../core/services/local-strorage.service";
 import {OrderPizza} from "../../interfaces/order-pizza";
 
@@ -17,7 +15,6 @@ export class PizzaCardComponent implements OnInit {
   pizzaSize= 0;
   pizzaOrders = this.storage.getOrderFromStorage(this.storage.localOrder);
   order:OrderPizza = {} as OrderPizza;
-  // order$:BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
 
 
   constructor(private router: Router, private storage: LocalStrorageService) {}

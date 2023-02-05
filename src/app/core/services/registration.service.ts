@@ -12,8 +12,7 @@ import {LocalStrorageService} from "./local-strorage.service";
   providedIn: 'root'
 })
 export class RegistrationService {
-  dbUsers = 'http://localhost:3001/users';
-  // usersPassword:string[] = [];
+  dbUsers = 'http://localhost:3000/users';
   error:string = '';
 
   constructor(
@@ -26,16 +25,16 @@ export class RegistrationService {
     ) { }
 
   registerUser(user: User){
-    this.http.get(`http://localhost:3001/users?password=${user.password}`).pipe(
+    this.http.get(`http://localhost:3000/users?password=${user.password}`).pipe(
       switchMap((el:any) => {
           if(el[0]){
             throw new Error();
+
             return of(null);
           }else{
                 user.type = 'user';
                 this.authGuard.userIsLog();
                 this.localStrorageService.setToLocalStorage(this.localStrorageService.localAuth, user)
-                // localStorage.setItem(this.authService.localAuth, JSON.stringify(user));
 
                 this.router.navigate(['user', user.name]);
                 return this.http.post(this.dbUsers,user);

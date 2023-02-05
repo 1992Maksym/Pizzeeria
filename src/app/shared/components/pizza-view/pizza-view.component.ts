@@ -15,7 +15,6 @@ import {OrderPizza} from "../../interfaces/order-pizza";
 })
 export class PizzaViewComponent implements OnInit, DoCheck{
   similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
-  // orderArr$:BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
   orderArr = this.storage.getOrderFromStorage(this.storage.localOrder);
 
   pizza: Pizza = {} as Pizza;
@@ -51,7 +50,7 @@ export class PizzaViewComponent implements OnInit, DoCheck{
   }
 
   getPizzaList(){
-    this.http.get<Pizza[]>('http://localhost:3001/pizza_arr').pipe(
+    this.http.get<Pizza[]>('http://localhost:3000/pizza_arr').pipe(
         tap(el => this.similarPizzas$.next(this.randomPizza(el)))
         ).subscribe()
   }
@@ -59,10 +58,8 @@ export class PizzaViewComponent implements OnInit, DoCheck{
     this.pizzaSize = size;
   }
   setToCart(){
-    // this.createOrder();
     this.orderArr.push(this.order);
     this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
-    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr$.getValue());
   }
 
   createOrder(){
@@ -72,13 +69,6 @@ export class PizzaViewComponent implements OnInit, DoCheck{
     this.order.id = this.pizza.id;
     this.order.price = this.pizzaSizeForm.value.price;
     this.order.count = 1;
-    // this.orderArr.push(this.order);
-
-    // this.orderArr$.pipe(
-    //   tap(el => el.push(order)),
-    // ).subscribe()
-    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
-
   }
 
 
