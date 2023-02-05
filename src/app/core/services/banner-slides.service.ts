@@ -13,7 +13,7 @@ export class BannerSlidesService {
   constructor(private http: HttpClient) { }
 
   getBannerItems(){
-    this.http.get('http://localhost:300/banner_items').pipe(
+    this.http.get('http://localhost:3000/banner_items').pipe(
       tap((el:any) => this.bannerSlides$.next(el))
     ).subscribe()
   }
