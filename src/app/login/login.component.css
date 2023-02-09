@@ -36,7 +36,7 @@
 .email-login input{
     display: block;
     width: 100%;
-    margin: 10px 0;
+    margin: 3px 0 10px;
     border: 1px solid #bdbdbd;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     border-radius: 3px;
@@ -63,4 +63,8 @@
 }
 .no-account-link{
     color: #bdbdbd;
+}
+.email-login label,
+.password-login label{
+  text-align: left
 }
