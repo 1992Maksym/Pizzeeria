@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Pizza } from '../../shared/interfaces/pizza';
 import { PizzaServerService } from './pizza-server.service';
 

@@ -207,31 +207,31 @@
   "banner_items": [
     {
       "image": "../../../assets/img/banner-pizzas/1.jpg",
-      "title": "посетите нас в свой День Рождения и поучавствуйте в акции в честь дня именинника",
+      "title": "Cкидка именинника",
       "id": 1,
       "link": "/promotions"
     },
     {
       "image": "../../../assets/img/banner-pizzas/2.jpg",
-      "title": "закажи две пиццы во вторник и получи скидку 70%",
+      "title": "Сумасшедший вторник",
       "id": 2,
       "link": "/promotions"
     },
     {
       "image": "../../../assets/img/banner-pizzas/3.jpg",
-      "title": "скидки для всех студентов",
+      "title": "Скидки для студентов",
       "id": 3,
       "link": "/promotions"
     },
     {
       "image": "../../../assets/img/banner-pizzas/4.jpg",
-      "title": "Пицца пятницы",
+      "title": "Пятничный переполох",
       "id": 4,
       "link": "https://sevenpizza.ua/product/100"
     },
     {
       "image": "../../../assets/img/banner-pizzas/5.jpg",
-      "title": "Пицца субботы",
+      "title": "Выгодная суббота",
       "id": 5,
       "link": "https://sevenpizza.ua/product/100"
     },
