@@ -4,9 +4,11 @@
   (slideChange)="onSlideChange()"
 >
   <ng-template class="slide" swiperSlide *ngFor="let slide of slides$ | async">
-    <div class="container">
-      <img class="pizzaImg" src={{slide.image}} alt="">
-      <a class="img-title" routerLink = {{slide.link}} fragment="promo{{slide.id}}">{{ slide.title }}</a>
+    <div class="container-wrap">
+      <div class="container">
+        <img class="pizzaImg" src={{slide.image}} alt="">
+        <a class="img-title" routerLink = {{slide.link}} fragment="promo{{slide.id}}">{{ slide.title }}</a>
+      </div>
     </div>
   </ng-template>
 

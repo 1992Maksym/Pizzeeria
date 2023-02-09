@@ -1,4 +1,3 @@
-
 .banner{
   width: 100%;
   height: 300px;
@@ -10,10 +9,13 @@
 .slide{
   position: relative;
 }
+.container-wrap{
+  padding: 0 90px;
+}
 .container{
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 90px;
+  position: relative;
 }
 .pizzaImg{
   width: 100%;
@@ -23,11 +25,20 @@
 }
 .img-title{
   position: absolute;
-  left: 12%;
-  top: 50px;
-  color: #08c5d1;
+  left: 0;
+  top: 0;
+  color: #fff;
   font-size: 30px;
   line-height: 32px;
   text-decoration: none;
   max-width: 400px;
+  padding: 10px
+}
+
+
+::ng-deep .swiper-button-next{
+  color: #2b4a45;
+}
+::ng-deep .swiper-button-prev{
+  color: #2b4a45;
 }
