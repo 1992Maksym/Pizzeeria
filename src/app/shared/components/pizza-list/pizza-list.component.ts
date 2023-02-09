@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pizza } from '../../interfaces/pizza';
+import {tap} from "rxjs/operators";
 
 
 @Component({
