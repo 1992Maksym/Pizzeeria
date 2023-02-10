@@ -1,6 +1,6 @@
 <div class="login-block">
     <div class="login-form-wrap">
-        <span class="close-login-form">x</span>
+        <button class="close-dialog-window-btn" (click)="closeDialogWindow()"><mat-icon>close</mat-icon></button>
         <h2 class="login-title">Вход</h2>
         <span class="login-subtitle">Пожалуйста, введите почту и пароль!</span>
         <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">
@@ -23,8 +23,7 @@
             <button class="login-form-btn" [disabled]="this.loginForm.invalid" mat-stroked-button type="submit">Войти</button>
         </form>
         <div class="no-account">
-            <a routerLink = "/registration" class="no-account-link" >Создать аккаунт</a>
+            <a class="no-account-link" (click)="openRegistrationForm()">Создать аккаунт</a>
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>

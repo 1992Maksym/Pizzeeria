@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from "../registration/registration.component";
 import { MessageService } from 'primeng/api';
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MessageService } from 'primeng/api';
         AppRoutingModule,
         ToastModule,
         RippleModule,
-        ButtonModule
+        ButtonModule,
+        MatIconModule
     ],
     providers: [
         MessageService,

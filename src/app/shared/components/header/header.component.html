@@ -9,9 +9,7 @@
     <app-header-logged></app-header-logged>
   </div>
   <ng-template #nologged class="header-login">
-    <a routerLink="/login" mat-button class="mat-button">Войти</a>
+    <a mat-button class="mat-button" (click)="openLoginForm()">Войти</a>
   </ng-template>
 
 </div>
-
-<!--<router-outlet></router-outlet>-->
