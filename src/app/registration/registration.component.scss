@@ -35,24 +35,28 @@
         .email-login input{
             display: block;
             width: 100%;
-            margin: 10px 0;
+            margin: 3px 0 10px;
             border: 1px solid #bdbdbd;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
             border-radius: 3px;
             padding: 10px 5px;
             box-sizing: border-box;
         }
+
         .name-login input:focus,
         .password-login input:focus,
         .email-login input:focus{
           outline: none;
         }
+
         .name-login label,
         .password-login label,
         .email-login label{
             display: block;
             font-size: 14px;
+            text-align: left!important;
         }
+
         .form-errors{
             font-size: 10px;
             color: darkred
