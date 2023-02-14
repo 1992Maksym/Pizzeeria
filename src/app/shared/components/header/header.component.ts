@@ -1,22 +1,28 @@
-import {AfterViewInit, Component, OnChanges, OnInit} from '@angular/core';
-import {BehaviorSubject, filter} from 'rxjs';
-import { User } from '../../interfaces/user.interface';
+import {Component} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 import { GuardService } from '../../../core/services/guard.service';
-import {Router, Scroll} from "@angular/router";
-import { ViewportScroller } from '@angular/common';
+import {LoginComponent} from "../../../login/login.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent{
 
   userLogged$: BehaviorSubject<boolean> = this.authGuard.user;
 
-  constructor(private authGuard: GuardService, private router: Router, private viewportScroller: ViewportScroller,) { }
+  constructor(private authGuard: GuardService, private matDialog: MatDialog) { }
 
-  ngOnInit(): void {
+  openLoginForm(): void{
+    this.matDialog
+      .open<LoginComponent>(LoginComponent, {
+        panelClass: 'login-window',
+        backdropClass: 'login-backdrop',
+      })
+      .afterClosed()
+      .subscribe();
   }
 
 }
