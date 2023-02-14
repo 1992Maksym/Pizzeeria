@@ -1,5 +1,6 @@
 .login-form-wrap{
     max-width: 400px;
+    min-width: 350px;
     padding: 30px 40px;
     text-align: center;
     box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
@@ -17,9 +18,7 @@
 mat-icon{
   color: #bdbdbd;
 }
-.close-login-form:hover{
-    cursor: pointer;
-}
+
 .login-title{
     margin: 0 0 5px 0;
 }
@@ -43,6 +42,11 @@ mat-icon{
     padding: 10px 5px;
     box-sizing: border-box;
 }
+.password-login input:focus,
+.email-login input:focus{
+  outline: none;
+}
+
 .password-login label,
 .email-login label{
     display: block;
@@ -64,6 +68,11 @@ mat-icon{
 .no-account-link{
     color: #bdbdbd;
 }
+.no-account-link:hover,
+.close-dialog-window-btn:hover{
+  cursor: pointer;
+}
+
 .email-login label,
 .password-login label{
   text-align: left

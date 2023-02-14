@@ -1,12 +1,26 @@
 .register-form-wrap{
     max-width: 400px;
-    margin: 40px auto 0;
+    min-width: 350px;
     padding: 30px 40px;
     text-align: center;
     box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
     border-radius: 15px;
-    // position: relative;
+    position: relative;
 
+    .close-dialog-window-btn{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none!important;
+      background: none;
+
+      mat-icon{
+        color: #bdbdbd;
+      }
+    }
+    .close-dialog-window-btn:hover{
+      cursor: pointer;
+    }
     .login-title{
         margin: 0 0 5px 0;
     }
@@ -28,6 +42,11 @@
             padding: 10px 5px;
             box-sizing: border-box;
         }
+        .name-login input:focus,
+        .password-login input:focus,
+        .email-login input:focus{
+          outline: none;
+        }
         .name-login label,
         .password-login label,
         .email-login label{
@@ -41,5 +60,9 @@
         .login-form-btn{
             margin-top: 40px;
         }
+        .login-form-btn:hover{
+          cursor: pointer;
+        }
     }
 }
+

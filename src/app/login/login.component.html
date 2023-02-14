@@ -1,6 +1,6 @@
 <div class="login-block">
     <div class="login-form-wrap">
-        <button class="close-dialog-window-btn" (click)="closeDialogWindow()"><mat-icon>close</mat-icon></button>
+        <span class="close-dialog-window-btn" (click)="closeDialogWindow()"><mat-icon>close</mat-icon></span>
         <h2 class="login-title">Вход</h2>
         <span class="login-subtitle">Пожалуйста, введите почту и пароль!</span>
         <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">

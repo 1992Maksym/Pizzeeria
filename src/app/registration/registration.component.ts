@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from 'src/app/core/services/registration.service';
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +12,10 @@ export class RegistrationComponent implements OnInit {
 
   registerForm! : UntypedFormGroup;
 
-  constructor(private register: RegistrationService) { }
+  constructor(
+    private register: RegistrationService,
+    private dialogRef: MatDialogRef<RegistrationComponent>
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = new UntypedFormGroup({
@@ -25,7 +29,11 @@ export class RegistrationComponent implements OnInit {
     return this.registerForm.controls
   }
 
-  submitRegister(){
+  closeDialogWindow(): void{
+    this.dialogRef.close();
+  }
+
+  submitRegister(): void{
     this.register.registerUser(this.registerForm.value);
   }
 
