@@ -1,6 +1,6 @@
 <div class="logged-wrap">
     <div class="logged-user"><a (click)="navigateUser()">{{ userLoggedName$ | async }}</a></div>
-    <div class="cart" matBadge="0" MatBadgeSize = 'small' *ngIf="userLogged$ | async">
+    <div class="cart" [matBadge]="orderCount" MatBadgeSize = 'small' *ngIf="userLogged$ | async">
       <a routerLink="cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@
         </svg>
       </a>
     </div>
-    <button class="login" mat-button class="mat-button" (click)="logOut()">Выйти</button>
+    <button class="login mat-button" mat-button (click)="logOut()">Выйти</button>
 </div>
 
 

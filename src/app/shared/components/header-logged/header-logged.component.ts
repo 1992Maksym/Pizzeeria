@@ -14,6 +14,10 @@ export class HeaderLoggedComponent implements OnInit {
   userLoggedName$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   userLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  get orderCount(): number{
+    return this.localStrorageService.getOrderFromStorage(this.localStrorageService.localOrder).length
+  }
+
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -31,6 +35,7 @@ export class HeaderLoggedComponent implements OnInit {
     this.userLoggedName$.next(user.name);
     this.userTypeCheck();
   }
+
   logOut(){
     this.authGuard.userIsLogout();
     this.router.navigate(['/']);
