@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, Subject, takeUntil} from "rxjs";
 import {OrderPizza} from "../../interfaces/order-pizza";
 import {LocalStrorageService} from "../../../core/services/local-strorage.service";
 import {tap} from "rxjs/operators";
@@ -9,9 +9,10 @@ import {tap} from "rxjs/operators";
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   orderArr$: BehaviorSubject<OrderPizza[]> = new BehaviorSubject<OrderPizza[]>(this.storage.getOrderFromStorage(this.storage.localOrder));
   totalPrice$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  unsubscribe$ = new Subject();
 
   constructor(private storage: LocalStrorageService) { }
 
@@ -23,12 +24,21 @@ export class CartComponent implements OnInit {
     let priceOrder = 0;
     this.orderArr$.pipe(
       tap((el: OrderPizza[]) => priceOrder = el.reduce((sum,num) => num.price ? sum + ((+num.price) * num.count) : 0,0)),
-      tap(() => this.totalPrice$.next(priceOrder))
+      tap(() => this.totalPrice$.next(priceOrder)),
+      takeUntil(this.unsubscribe$)
     ).subscribe()
   }
 
   clearCart(){
     this.storage.setOrderToStorage(this.storage.localOrder, []);
     this.orderArr$.next([])
+  }
+  checkPizzaCount(arr: OrderPizza[]):void{
+    this.orderArr$.next(arr);
+  }
+
+  ngOnDestroy():void{
+    this.unsubscribe$.next('');
+    this.unsubscribe$.complete();
   }
 }

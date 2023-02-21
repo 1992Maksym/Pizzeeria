@@ -10,8 +10,8 @@
     </div>
   </div>
   <div class="order-amount">
-    <button mat-stroked-button>-</button>
+    <button mat-stroked-button (click)="removePizza()">-</button>
     <div class="amount-item">{{order.count}}</div>
-    <button mat-stroked-button>+</button>
+    <button mat-stroked-button (click)="addPizza()">+</button>
   </div>
 </div>

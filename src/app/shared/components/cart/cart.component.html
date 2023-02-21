@@ -2,7 +2,7 @@
   <div class="container">
     <div class="orders" *ngIf="orderArr$.getValue().length >=1; else noOrders">
       <div class="cart-title">Ваш заказ</div>
-      <app-pizza-order class="order-item" *ngFor="let item of orderArr$ | async" [order]="item"></app-pizza-order>
+      <app-pizza-order class="order-item" *ngFor="let item of orderArr$ | async" [order]="item" (checkPizzaItem)="checkPizzaCount($event)"></app-pizza-order>
       <div class="total-price">
         <div class="price-text">Сумма заказа: </div>
         <div class="price-sum">{{ totalPrice$ | async }}гр</div>
