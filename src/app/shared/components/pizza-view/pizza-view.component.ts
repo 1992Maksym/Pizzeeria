@@ -57,9 +57,6 @@ export class PizzaViewComponent implements OnInit, DoCheck {
 
   setToCart(){
     this.addOrderService.addOrderToCart(this.orderArr, this.order);
-    // const index = this.orderArr.indexOf(this.order);
-    // index >= 0 ? this.orderArr[index].count++ : this.orderArr.push(this.order);
-    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
   }
 
   createOrder(size:number, price:number){
