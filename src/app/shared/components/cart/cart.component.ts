@@ -22,8 +22,8 @@ export class CartComponent implements OnInit {
   priceSum(){
     let priceOrder = 0;
     this.orderArr$.pipe(
-      tap((el: OrderPizza[]) => priceOrder = el.reduce((sum,num) => num.price?sum + (+num.price) : 0,0)),
-      tap(el => this.totalPrice$.next(priceOrder))
+      tap((el: OrderPizza[]) => priceOrder = el.reduce((sum,num) => num.price ? sum + ((+num.price) * num.count) : 0,0)),
+      tap(() => this.totalPrice$.next(priceOrder))
     ).subscribe()
   }
 
