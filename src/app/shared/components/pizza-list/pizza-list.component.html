@@ -1,6 +1,6 @@
 <div class="container pizza-container">
     <div class="pizza-block-title"><h1>Pizza</h1></div>
     <div class="pizza-list-block">
-      <app-pizza-card class="pizza-list-item" *ngFor="let pizza of pizzaArr" [item]="pizza"></app-pizza-card>
+      <app-pizza-card class="pizza-list-item" *ngFor="let pizza of pizzaArr" [item]="pizza" (pizzaOrder)="addOrder($event)"></app-pizza-card>
     </div>
 </div>

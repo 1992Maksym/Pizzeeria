@@ -23,7 +23,7 @@ export class PizzaSizesFormComponent implements OnInit {
     this.pizzaSize = size;
     const pizzaSizeAndPrice = {
       size: size,
-      price: this.pizzaSizeForm.value.price,
+      price: Number(this.pizzaSizeForm.value.price),
       item: this.item,
     }
     this.checkboxSizes.emit(pizzaSizeAndPrice);

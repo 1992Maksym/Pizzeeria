@@ -7,29 +7,29 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
 import {LocalStrorageService} from "../../../core/services/local-strorage.service";
 import {OrderPizza} from "../../interfaces/order-pizza";
+import {AddOrderService} from "../../../core/services/add-order.service";
 
 @Component({
   selector: 'app-pizza-view',
   templateUrl: './pizza-view.component.html',
   styleUrls: ['./pizza-view.component.scss']
 })
-export class PizzaViewComponent implements OnInit, DoCheck{
+export class PizzaViewComponent implements OnInit, DoCheck {
   similarPizzas$: BehaviorSubject<Pizza[]> = new BehaviorSubject<Pizza[]>([]);
-  orderArr = this.storage.getOrderFromStorage(this.storage.localOrder);
 
+  orderArr = this.storage.getOrderFromStorage(this.storage.localOrder);
   pizza: Pizza = {} as Pizza;
   order:OrderPizza = {} as OrderPizza;
-  pizzaSize:number = 0;
 
   pizzaSizeForm = new FormGroup({
     price: new FormControl<number>(0),
   });
 
-
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
     private storage: LocalStrorageService,
+    private addOrderService: AddOrderService
   ) {}
 
   ngOnInit(): void {
@@ -54,22 +54,21 @@ export class PizzaViewComponent implements OnInit, DoCheck{
         tap(el => this.similarPizzas$.next(this.randomPizza(el)))
         ).subscribe()
   }
-  getSize(size: number){
-    this.pizzaSize = size;
-  }
+
   setToCart(){
-    this.orderArr.push(this.order);
-    this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
+    this.addOrderService.addOrderToCart(this.orderArr, this.order);
+    // const index = this.orderArr.indexOf(this.order);
+    // index >= 0 ? this.orderArr[index].count++ : this.orderArr.push(this.order);
+    // this.storage.setOrderToStorage(this.storage.localOrder, this.orderArr);
   }
 
-  createOrder(){
-    this.order.size = this.pizzaSize;
+  createOrder(size:number, price:number){
+    this.order.size = size;
     this.order.image = this.pizza.image;
     this.order.title = this.pizza.title;
     this.order.id = this.pizza.id;
-    this.order.price = this.pizzaSizeForm.value.price;
+    this.order.price = price;
     this.order.count = 1;
   }
-
 
 }

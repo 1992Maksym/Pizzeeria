@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Pizza} from "../../interfaces/pizza";
 import {Router} from "@angular/router";
-import {LocalStrorageService} from "../../../core/services/local-strorage.service";
 import {OrderPizza} from "../../interfaces/order-pizza";
 
 @Component({
@@ -11,13 +10,12 @@ import {OrderPizza} from "../../interfaces/order-pizza";
 })
 export class PizzaCardComponent implements OnInit {
   @Input() item: Pizza = {} as Pizza;
+  @Output() pizzaOrder: EventEmitter<OrderPizza> = new EventEmitter<OrderPizza>();
+
   pizzaPrice: number|null|undefined = 0;
-  pizzaSize= 0;
-  pizzaOrders = this.storage.getOrderFromStorage(this.storage.localOrder);
   order:OrderPizza = {} as OrderPizza;
 
-
-  constructor(private router: Router, private storage: LocalStrorageService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -38,8 +36,7 @@ export class PizzaCardComponent implements OnInit {
   }
 
   pushOrder(){
-    this.pizzaOrders.push(this.order);
-    this.storage.setOrderToStorage(this.storage.localOrder, this.pizzaOrders);
+    this.pizzaOrder.emit(this.order);
   }
 
 }

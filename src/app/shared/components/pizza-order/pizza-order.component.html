@@ -1,7 +1,7 @@
 <div class="order-wrap">
   <div class="order-body">
     <div class="order-image">
-      <img src={{order.image}}>
+      <img alt="pizza image" src={{order.image}}>
     </div>
     <div class="order-description">
       <div class="order-title">{{order.title}}</div>
@@ -11,7 +11,7 @@
   </div>
   <div class="order-amount">
     <button mat-stroked-button>-</button>
-    <div class="amount-item">0</div>
+    <div class="amount-item">{{order.count}}</div>
     <button mat-stroked-button>+</button>
   </div>
 </div>
