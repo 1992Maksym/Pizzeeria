@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { GuardService } from 'src/app/core/services/guard.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { LocalStrorageService } from "../../../core/services/local-strorage.service";
+import {OrderPizza} from "../../interfaces/order-pizza";
 
 @Component({
   selector: 'app-header-logged',
@@ -15,7 +16,8 @@ export class HeaderLoggedComponent implements OnInit {
   userLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   get orderCount(): number{
-    return this.localStrorageService.getOrderFromStorage(this.localStrorageService.localOrder).length
+    const arrOrders = this.localStrorageService.getOrderFromStorage(this.localStrorageService.localOrder);
+    return arrOrders.reduce((sum: number,num:OrderPizza) => sum + num.count, 0)
   }
 
   constructor(
