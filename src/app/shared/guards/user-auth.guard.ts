@@ -13,7 +13,6 @@ export class UserAuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if(this.authGuard.user.getValue()){
-      console.log('user is login');
       return true
     }else{
       return this.router.navigate(['not-found'], {queryParams: {auth: false}})

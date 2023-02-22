@@ -1,21 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {RegistrationComponent} from "../registration/registration.component";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { RegistrationComponent } from "../registration/registration.component";
+import { GuardService } from "../core/services/guard.service";
+import { tap } from "rxjs/operators";
+import { Subject, takeUntil } from "rxjs";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
+  userLoggedCheck$ = this.authGuard.user.asObservable();
+  unsubscribe$ = new Subject();
+
+  loggedIncorrectly = false;
   loginForm!: UntypedFormGroup;
 
   constructor(
     private authService: AuthService,
     private matDialog: MatDialog,
-    private dialogRef: MatDialogRef<LoginComponent>
+    private dialogRef: MatDialogRef<LoginComponent>,
+    private authGuard: GuardService,
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +53,26 @@ export class LoginComponent implements OnInit {
   }
 
   submitLogin() {
-    this.authService.logIn(this.loginForm.value)
+    this.authService.logIn(this.loginForm.value);
+    this.checkUser();
+  }
+
+  checkUser():void{
+    this.userLoggedCheck$.pipe(
+      tap(el => {
+        if(!el) {
+          this.loggedIncorrectly = true;
+        }else{
+          this.loggedIncorrectly = false;
+          this.dialogRef.close();
+        }
+      }),
+      takeUntil(this.unsubscribe$)
+    ).subscribe()
+  }
+
+  ngOnDestroy():void{
+    this.unsubscribe$.next('');
+    this.unsubscribe$.complete();
   }
 }

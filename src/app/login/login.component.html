@@ -20,6 +20,7 @@
                     <div *ngIf="formControls['password'].errors['pattern']">Введите правильно пароль</div>
                 </div>
             </div>
+            <div class="checkFormValid form-errors" *ngIf="loggedIncorrectly">неправильный пароль или почта</div>
             <button class="login-form-btn" [disabled]="this.loginForm.invalid" mat-stroked-button type="submit">Войти</button>
         </form>
         <div class="no-account">
