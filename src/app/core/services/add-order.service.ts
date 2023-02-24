@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStrorageService } from "./local-strorage.service";
 import { OrderPizza } from "../../shared/interfaces/order-pizza";
+import { GuardService } from "./guard.service";
 
 
 @Injectable({
@@ -8,17 +9,23 @@ import { OrderPizza } from "../../shared/interfaces/order-pizza";
 })
 export class AddOrderService {
 
-  constructor(private storage: LocalStrorageService) { }
+  get checkLogin():boolean{
+    return this.guardService.user.getValue();
+  }
+
+  constructor(private storage: LocalStrorageService, private guardService: GuardService ) { }
 
   addOrderToCart(pizzaOrders: OrderPizza[], order: OrderPizza):void {
-    let index = -1;
-    for(let item of pizzaOrders){
-      if(item.id === order.id && item.price === order.price){
-        index = pizzaOrders.indexOf(item);
+    if(this.checkLogin){
+      let index = -1;
+      for(let item of pizzaOrders){
+        if(item.id === order.id && item.price === order.price){
+          index = pizzaOrders.indexOf(item);
+        }
       }
+      index >= 0 ? pizzaOrders[index].count++ : pizzaOrders.push(order);
+      this.storage.setOrderToStorage(this.storage.localOrder, pizzaOrders);
     }
-    index >= 0 ? pizzaOrders[index].count++ : pizzaOrders.push(order);
-    this.storage.setOrderToStorage(this.storage.localOrder, pizzaOrders);
   }
 
   removeOrderItem(pizzaOrders: OrderPizza[], order: OrderPizza):void {
