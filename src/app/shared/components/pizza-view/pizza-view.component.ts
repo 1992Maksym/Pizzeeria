@@ -41,10 +41,12 @@ export class PizzaViewComponent implements OnInit, DoCheck{
 
   randomPizza(pizzaListArr: Pizza[]){
     const randomPizzaArr = [];
-    for (let i=0; i<3; i++){
+    for (let i=0; randomPizzaArr.length<3; i++){
       const randomIndex = Math.floor(Math.random() * (pizzaListArr.length - 1));
-      randomPizzaArr.push(pizzaListArr[randomIndex]);
-      pizzaListArr = pizzaListArr.filter((el:Pizza) => el != pizzaListArr[randomIndex]);
+      if(pizzaListArr[randomIndex].title !== this.pizza.title){
+        randomPizzaArr.push(pizzaListArr[randomIndex]);
+        pizzaListArr = pizzaListArr.filter((el:Pizza) => el != pizzaListArr[randomIndex]);
+      }
     }
     return randomPizzaArr;
   }
@@ -70,6 +72,4 @@ export class PizzaViewComponent implements OnInit, DoCheck{
     this.order.price = this.pizzaSizeForm.value.price;
     this.order.count = 1;
   }
-
-
 }
