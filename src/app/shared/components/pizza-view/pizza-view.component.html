@@ -41,6 +41,30 @@
         <app-pizza-card class="similar-item" *ngFor="let pizza of similarPizzas$ | async" [item]="pizza"></app-pizza-card>
       </div>
     </div>
+    <div class="comments">
+      <div class="comments-title">Комментарии</div>
+      <mat-divider></mat-divider>
+      <div class="comments-container">
+        <div class="comments-list"></div>
+        <div class="comment-create">
+          <form action="">
+            <mat-form-field appearance="outline">
+              <mat-label>Имя</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Имя</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Textarea</mat-label>
+              <textarea matInput></textarea>
+            </mat-form-field>
+
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

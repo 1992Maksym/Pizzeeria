@@ -21,6 +21,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { PizzaOrderComponent } from './components/pizza-order/pizza-order.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatIconModule } from "@angular/material/icon";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatInputModule } from "@angular/material/input";
 
 
 @NgModule({
@@ -50,16 +52,18 @@ import { MatIconModule } from "@angular/material/icon";
     HeaderLoggedComponent,
     WithoutQuotesPipe,
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    SwiperModule,
-    MatBadgeModule,
-    MatButtonModule,
-    AppRoutingModule,
-    MatDialogModule,
-    MatIconModule
-  ]
+    imports: [
+        CommonModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        SwiperModule,
+        MatBadgeModule,
+        MatButtonModule,
+        AppRoutingModule,
+        MatDialogModule,
+        MatIconModule,
+        MatDividerModule,
+        MatInputModule
+    ]
 })
 export class SharedModule { }
