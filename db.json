@@ -21,7 +21,8 @@
         "помидор"
       ],
       "titleId": "pizzaNapoletana",
-      "id": "1"
+      "id": "1",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza2.jfif",
@@ -43,7 +44,8 @@
         "сыр с плесенью"
       ],
       "titleId": "pizza4chees",
-      "id": "2"
+      "id": "2",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza3.jfif",
@@ -66,7 +68,8 @@
         "помидор"
       ],
       "titleId": "../../../../assets/pizzaMexicano",
-      "id": "3"
+      "id": "3",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza4.jfif",
@@ -87,7 +90,8 @@
         "ананасы"
       ],
       "titleId": "pizzaHawaii",
-      "id": "4"
+      "id": "4",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza5.jfif",
@@ -109,7 +113,8 @@
         "папперони"
       ],
       "titleId": "pizzaPapperoni",
-      "id": "5"
+      "id": "5",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza7.jfif",
@@ -132,7 +137,8 @@
         "бекон"
       ],
       "titleId": "pizzaBigMeat",
-      "id": "6"
+      "id": "6",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza6.jfif",
@@ -155,7 +161,8 @@
         "моцарелла"
       ],
       "titleId": "pizzaSalmon",
-      "id": "7"
+      "id": "7",
+      "comments": []
     },
     {
       "image": "../../../assets/img/pizzas/pizza8.jfif",
@@ -178,7 +185,8 @@
         "моцарелла"
       ],
       "titleId": "pizzaPhiladelphia",
-      "id": "8"
+      "id": "8",
+      "comments": []
     }
   ],
   "users": [

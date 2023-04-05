@@ -1,7 +1,7 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pizza } from '../../interfaces/pizza';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from "rxjs/operators";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
@@ -21,9 +21,33 @@ export class PizzaViewComponent implements OnInit, DoCheck{
   order:OrderPizza = {} as OrderPizza;
   pizzaSize:number = 0;
 
+
+  commentForm = new FormGroup({
+    commentName: new FormControl<string>('',[Validators.required]),
+    commentEmail: new FormControl<string>('', [
+      Validators.required,
+      Validators.pattern(
+        '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'
+      ),
+    ]),
+    commentText: new FormControl<string>('',[Validators.required, Validators.minLength(2)])
+  })
   pizzaSizeForm = new FormGroup({
     price: new FormControl<number>(0),
   });
+
+  get formCommentControl(){
+    return this.commentForm.controls;
+  }
+  get requiredNameError(){
+    return this.commentForm.controls.commentName.touched && this.commentForm.controls.commentName.errors;
+  }
+  get emailErrors(){
+    return this.commentForm.controls.commentEmail.touched && this.commentForm.controls.commentEmail.errors;
+  }
+  get commentError(){
+    return  this.commentForm.controls.commentText.touched && this.commentForm.controls.commentText.errors;
+  }
 
 
   constructor(
@@ -72,4 +96,7 @@ export class PizzaViewComponent implements OnInit, DoCheck{
     this.order.price = this.pizzaSizeForm.value.price;
     this.order.count = 1;
   }
+
+  getCommentData(){}
+
 }

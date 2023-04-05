@@ -26,6 +26,7 @@
               </li>
             </ul>
           </form>
+
         </div>
         <div class="pizzaView-footer">
           <div class="pizzaView-price">Цена: {{ (pizzaSizeForm.value.price | json) | withoutQuotes }}гр</div>
@@ -47,20 +48,23 @@
       <div class="comments-container">
         <div class="comments-list"></div>
         <div class="comment-create">
-          <form action="">
+          <form class="comments-form" [formGroup]="commentForm" (submit)="getCommentData()">
             <mat-form-field appearance="outline">
               <mat-label>Имя</mat-label>
-              <input matInput>
+              <input matInput formControlName="commentName">
+              <mat-error *ngIf="requiredNameError">Name is empty</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Имя</mat-label>
-              <input matInput>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="commentEmail">
+              <mat-error *ngIf="emailErrors">Email is not correct or empty</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Textarea</mat-label>
-              <textarea matInput></textarea>
+              <textarea matInput formControlName="commentText"></textarea>
+              <mat-error *ngIf="commentError">Comment is not correct or empty</mat-error>
             </mat-form-field>
-
+            <button type="submit" mat-stroked-button class="comment-btn">Добавить</button>
           </form>
         </div>
       </div>
